@@ -62,7 +62,7 @@ require 'json'
         'CRN' => crn,
         'Content-Type' => 'application/json' }
     )
-    return JSON.parse(response.body)['pvmInstances']
+    return JSON.parse(response.body, object_class: OpenStruct).pvmInstances
   end
 
   # Get an IBM Power Cloud PVM instance
@@ -81,6 +81,6 @@ require 'json'
         'CRN' => crn,
         'Content-Type' => 'application/json' }
     )
-    return JSON.parse(response.body)
+    return JSON.parse(response.body, object_class: OpenStruct)
   end
 end
