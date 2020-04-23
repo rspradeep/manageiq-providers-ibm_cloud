@@ -72,33 +72,20 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::CloudManag
  "volumeIDs"=>["4cc5b049-13fc-46ad-92e0-47c685b284a6"]}
 
   def parse
-    vms
+	VMIs.each do |vmi|
+		persister_instance = persister.vms.build(
+			:availability_zone => "",
+			:description       => "IBM Power Server",
+			:ems_ref           => vmi["pvmInstanceID"],
+			:flavor            => "",
+			:location          => "unknown",
+			:name              => vmi["serverName"],
+			:vendor			   => 'unknown',
+			:genealogy_parent  => "",
+			:connection_state  => "connected",
+			:raw_power_state   => vmi["status"],
+			:uid_ems           => vmi["pvmInstanceID"],
+		)
+	end
   end
-
-  def vms
-    persister_vmi = []
-
-	# TODO: here loop over entries in the collector
-	# find out how to access the collector
-    VMIs.each do |vmi|
-        persister_vmi << {
-        :availability_zone => "",
-        :description       => "IBM Power Server",
-        :ems_ref           => vmi["pvmInstanceID"],
-        :flavor            => "",
-        :location          => "unknown",
-        :name              => vmi["serverName"],
-        :genealogy_parent  => "",
-        :connection_state  => "connected",
-        :raw_power_state   => vmi["status"],
-        :uid_ems           => vmi["pvmInstanceID"],
-        :vendor            => "VENDOR_IBM".freeze
-        }
-    end
-
-	# TODO:here instead of the output persist the data
-	# find out how to persist each 'vmi'
-    puts persister_vmi
-  end
-	
 end
