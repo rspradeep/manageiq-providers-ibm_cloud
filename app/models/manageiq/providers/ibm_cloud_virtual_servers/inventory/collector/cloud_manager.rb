@@ -13,4 +13,13 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector::CloudMa
       @connection[:crn],
       @connection[:region])
   end
+
+  def networks
+    self.connection
+    self.get_networks(
+      @connection[:token],
+      @connection[:guid],
+      @connection[:crn],
+      @connection[:region])
+  end
 end

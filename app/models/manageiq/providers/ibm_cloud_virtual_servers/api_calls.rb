@@ -88,4 +88,46 @@ require 'json'
     )
     return JSON.parse(response.body)
   end
+
+  # Get all networks in an IBM Power Cloud instance
+  #
+  # @param token [IAM_Token] the IBM Cloud IAM Token object
+  # @param guid [String] the IBM Power Cloud instance GUID
+  # @param crn [String] the IBM Power Cloud instance CRN
+  # @param region [String] the IBM Power Cloud instance region
+  # @return [Array<Hash>] all networks for this IBM Power Cloud instance
+  def get_networks(token, guid, crn, region)
+    response = RestClient.get(
+      "https://#{region}.power-iaas.cloud.ibm.com" +
+      "/pcloud/v1/cloud-instances/#{guid}/networks",
+      { 'Authorization' => token.get(),
+        'CRN' => crn,
+        'Content-Type' => 'application/json' }
+    )
+    networks = Array.new
+    JSON.parse(response.body)['networks'].each do |network|
+      networks << get_network(
+        token, guid, crn, region, network['networkID'])
+    end
+    return networks
+  end
+
+  # Get an IBM Power Cloud network
+  #
+  # @param token [IAM_Token] the IBM Cloud IAM Token object
+  # @param guid [String] the IBM Power Cloud instance GUID
+  # @param crn [String] the IBM Power Cloud instance CRN
+  # @param region [String] the IBM Power Cloud instance region
+  # @param network_id [String] the network ID
+  # @return [Hash] Network
+  def get_network(token, guid, crn, region, network_id)
+    response = RestClient.get(
+      "https://#{region}.power-iaas.cloud.ibm.com" +
+      "/pcloud/v1/cloud-instances/#{guid}/networks/#{network_id}",
+      { 'Authorization' => token.get(),
+        'CRN' => crn,
+        'Content-Type' => 'application/json' }
+    )
+    return JSON.parse(response.body)
+  end
 end
