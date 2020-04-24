@@ -6,6 +6,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector::CloudMa
   end
 
   def vms
+    self.connection
     self.get_pcloudpvminstances(
       @connection[:token],
       @connection[:guid],

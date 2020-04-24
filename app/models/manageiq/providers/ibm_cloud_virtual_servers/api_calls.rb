@@ -62,7 +62,12 @@ require 'json'
         'CRN' => crn,
         'Content-Type' => 'application/json' }
     )
-    return JSON.parse(response.body, object_class: OpenStruct).pvmInstances
+    instances = Array.new
+    JSON.parse(response.body)['pvmInstances'].each do |instance|
+      instances << get_pcloudpvminstance(
+        token, guid, crn, region, instance['pvmInstanceID'])
+    end
+    return instances
   end
 
   # Get an IBM Power Cloud PVM instance
@@ -81,6 +86,6 @@ require 'json'
         'CRN' => crn,
         'Content-Type' => 'application/json' }
     )
-    return JSON.parse(response.body, object_class: OpenStruct)
+    return JSON.parse(response.body)
   end
 end
