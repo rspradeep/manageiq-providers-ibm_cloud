@@ -2,7 +2,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister::Defini
   extend ActiveSupport::Concern
 
   def initialize_cloud_inventory_collections
-    %i(vms hardwares networks).each do |name|
+    %i(vms hardwares operating_systems networks).each do |name|
       add_collection(cloud, name)
     end
   end
