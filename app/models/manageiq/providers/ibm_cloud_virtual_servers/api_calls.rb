@@ -130,4 +130,47 @@ require 'json'
     )
     return JSON.parse(response.body)
   end
+
+  # Get all images in an IBM Power Cloud instance
+  #
+  # @param token [IAM_Token] the IBM Cloud IAM Token object
+  # @param guid [String] the IBM Power Cloud instance GUID
+  # @param crn [String] the IBM Power Cloud instance CRN
+  # @param region [String] the IBM Power Cloud instance region
+  # @return [Array<Hash>] all Images for this instance
+  def get_images(token, guid, crn, region)
+    response = RestClient.get(
+      "https://#{region}.power-iaas.cloud.ibm.com" +
+      "/pcloud/v1/cloud-instances/#{guid}/images",
+      { 'Authorization' => token.get(),
+        'CRN' => crn,
+        'Content-Type' => 'application/json' }
+    )
+
+	images = Array.new
+	JSON.parse(response.body)['images'].each do |image|
+		images << get_image(
+        	token, guid, crn, region, image['imageID'])
+	end
+	return images	
+  end
+
+  # Get an IBM Power Cloud image
+  #
+  # @param token [IAM_Token] the IBM Cloud IAM Token object
+  # @param guid [String] the IBM Power Cloud instance GUID
+  # @param crn [String] the IBM Power Cloud instance CRN
+  # @param region [String] the IBM Power Cloud instance region
+  # @return [Hash] Image
+  def get_image(token, guid, crn, region, imageID)
+    response = RestClient.get(
+      "https://#{region}.power-iaas.cloud.ibm.com" +
+      "/pcloud/v1/cloud-instances/#{guid}/images/#{imageID}",
+      { 'Authorization' => token.get(),
+        'CRN' => crn,
+        'Content-Type' => 'application/json' }
+    )
+
+	return JSON.parse(response.body)
+  end
 end
