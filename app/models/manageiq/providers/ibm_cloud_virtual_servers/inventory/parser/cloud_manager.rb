@@ -1,7 +1,7 @@
 class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::CloudManager < ManageIQ::Providers::Inventory::Parser 
 
   def instances
-	self.collector.vms().each do |instance|
+	self.collector.vms.each do |instance|
 		vmi = 
 		{
 			:availability_zone => "",
@@ -23,10 +23,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::CloudManag
 			:memory_mb       => Integer(instance['memory']) * 1024,
 		}		
 		
-		system =
-		{
-			:product_name   => 'redhat'
-		}
+		imageID = instance['imageID']
 
 		network =
 		{
@@ -35,12 +32,48 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::CloudManag
 			:hostname    => 'test.de',
 		}	
 
-		yield vmi, hardware, system, network
+		yield vmi, hardware, imageID, network
 	end
   end
  
+
+  def images
+		images = []
+
+		self.collector.images.each do |ibm_image|
+			id    = ibm_image['imageID']
+			name  = "#{ibm_image['name']}, #{ibm_image['specifications']['operatingSystem']}"
+			desc  = ibm_image["specifications"].fetch_values(*%w[operatingSystem architecture endianness]).join('-')
+
+			images << 
+			{
+		        :uid_ems            => id,
+	   		    :ems_ref            => id,
+		        :name               => name,
+		        :description        => desc,
+		        :location           => "unknown",
+		        :vendor             => "ibm",
+		        :connection_state   => "connected",
+		        :raw_power_state    => "never",
+		        :template           => true,
+		        :publicly_available => true,
+			}
+		end
+
+		images
+  end
+
+  def vmiOS(images, imageID)
+		# vmiImage = images.find { |image| image['uid_ems'] == imageID }
+		return 'redhat'
+  end
+
   def parse
-		instances do |vmi, hardware, system, network| 
+		images.each do |image| 
+			self.persister.miq_templates.build(image)
+		end
+
+		instances do |vmi, hardware, imageID, network|
 			# saving general VMI information
 			ps_vmi = self.persister.vms.build(vmi)
 
@@ -49,7 +82,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::CloudManag
 			ps_hardware = self.persister.hardwares.build(hardware)
 
 			# saving OS information
-			system[:vm_or_template] = ps_vmi
+			system = { :vm_or_template => ps_vmi, :product_name => vmiOS(images, imageID) }
 			self.persister.operating_systems.build(system)
 
 			# saving network information

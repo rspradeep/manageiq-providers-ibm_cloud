@@ -3,6 +3,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager < ManageIQ::Prov
   require_nested :MetricsCollectorWorker
   require_nested :Refresher
   require_nested :RefreshWorker
+  require_nested :Template
   require_nested :Vm
   
   include ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin 
