@@ -1,4 +1,9 @@
-class ManageIQ::Providers::IbmCloudVirtualServers::NetworkManager < ManageIQ::Providers::NetworkManager
+class ManageIQ::Providers::IbmCloudVirtualServers::NetworkManager < ManageIQ::Providers::NetworkManager 
+  require_nested :Refresher
+  require_nested :RefreshWorker
+  require_nested :CloudNetwork
+  require_nested :NetworkPort
+
   include ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
 
   def self.validate_authentication_args(params)
