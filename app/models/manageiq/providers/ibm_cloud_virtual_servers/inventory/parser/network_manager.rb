@@ -9,27 +9,37 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::NetworkMan
           :orchestration_stack => '',
 		  :status			   => 'active',
         )
+
+		subnetId = "#{network['networkID']}-#{network['type']}"
+
+		persister_cloud_subnet = self.persister.cloud_subnets.build(
+          :cloud_network => persister_cloud_networks,
+          :cidr          => network['cidr'],
+          :ems_ref       => subnetId,
+          :gateway       => network['gateway'],
+          :name          => "#{network['name']}-#{network['type']}",
+          :status        => "active",
+		)
 	
 	  	collector.ports(network['networkID']).each do |port|
+          vmiId = port['pvmInstance']['pvmInstanceID']
+
 	      persister_network_port = self.persister.network_ports.build(
         	:name            => port['portID'],
 		    :ems_ref         => port['portID'],
     	    :status          => port['status'],
 	        :mac_address     => port['macAddress'],
-    	    :device_ref      => port['pvmInstanceID'],
-            #:device          => '',
+    	    :device_ref      => vmiId,
+            :device          => persister.vms.lazy_find(vmiId),
 	        #:security_groups => '',
     	    #:source          => '',
 	      )
 
-		  # TODO: implement, do lazy_find
-		  next
-
-          self.persister.cloud_subnet_network_ports.build(
-            :address      => port['ipAddress'],
-			:cloud_subnet => 'TODO',
-            :network_port => persister_network_port,
-          )
+        self.persister.cloud_subnet_network_ports.build(
+           :network_port => persister_network_port,
+           :address      => port['ipAddress'],
+		   :cloud_subnet => persister_cloud_subnet,
+        )
 	    end
 	  end
 	end

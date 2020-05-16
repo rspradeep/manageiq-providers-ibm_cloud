@@ -2,6 +2,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::NetworkManager < ManageIQ::Pr
   require_nested :Refresher
   require_nested :RefreshWorker
   require_nested :CloudNetwork
+  require_nested :CloudSubnet
   require_nested :NetworkPort
 
   include ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
