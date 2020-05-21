@@ -1,5 +1,6 @@
 class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::NetworkManager < ManageIQ::Providers::Inventory::Parser
 	def parse
+
 	  collector.networks.each do |network|
 	    persister_cloud_networks = self.persister.cloud_networks.build(
           :ems_ref             => network['networkID'],

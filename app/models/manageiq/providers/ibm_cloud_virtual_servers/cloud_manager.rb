@@ -8,6 +8,16 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager < ManageIQ::Prov
   
   include ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin 
 
+  before_create :ensure_managers
+  before_update :ensure_managers_zone
+
+  def ensure_managers
+    ensure_network_manager
+  end
+
+  def ensure_network_manager
+    build_network_manager(:type => 'ManageIQ::Providers::IbmCloudVirtualServers::NetworkManager') unless network_manager
+  end
 
   def self.validate_authentication_args(params)
     # return args to be used in raw_connect
