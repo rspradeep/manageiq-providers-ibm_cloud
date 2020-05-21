@@ -5,14 +5,19 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager < ManageIQ::Prov
   require_nested :RefreshWorker
   require_nested :Template
   require_nested :Vm
-  
-  include ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin 
+
+  include ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
 
   before_create :ensure_managers
-  before_update :ensure_managers_zone
+  before_create :ensure_managers_zone
 
   def ensure_managers
+    ensure_managers_zone
     ensure_network_manager
+  end
+
+  def ensure_managers_zone
+    # TODO: implement
   end
 
   def ensure_network_manager
@@ -21,15 +26,15 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager < ManageIQ::Prov
 
   def self.validate_authentication_args(params)
     # return args to be used in raw_connect
-    return [params[:default_userid], ManageIQ::Password.encrypt(params[:default_password])]
+    [params[:default_userid], ManageIQ::Password.encrypt(params[:default_password])]
   end
 
   def self.hostname_required?
     # TODO: ExtManagementSystem is validating this
     false
   end
-  
- def self.ems_type
+
+  def self.ems_type
     @ems_type ||= "ibm_cloud_virtual_servers".freeze
   end
 
