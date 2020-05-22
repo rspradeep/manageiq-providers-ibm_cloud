@@ -17,7 +17,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager < ManageIQ::Prov
   end
 
   def ensure_managers_zone
-    # TODO: implement
+    network_manager.zone_id = zone_id if network_manager
   end
 
   def ensure_network_manager
