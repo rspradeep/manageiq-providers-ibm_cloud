@@ -6,29 +6,32 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector::CloudMa
   end
 
   def vms
-    self.connection
-    self.get_pcloudpvminstances(
+    connection
+    get_pcloudpvminstances(
       @connection[:token],
       @connection[:guid],
       @connection[:crn],
-      @connection[:region])
+      @connection[:region]
+    )
   end
 
   def networks
-    self.connection
-    self.get_networks(
+    connection
+    get_networks(
       @connection[:token],
       @connection[:guid],
       @connection[:crn],
-      @connection[:region])
+      @connection[:region]
+    )
   end
 
   def images
-    self.connection
-    self.get_images(
+    connection
+    get_images(
       @connection[:token],
       @connection[:guid],
       @connection[:crn],
-      @connection[:region])
+      @connection[:region]
+    )
   end
 end

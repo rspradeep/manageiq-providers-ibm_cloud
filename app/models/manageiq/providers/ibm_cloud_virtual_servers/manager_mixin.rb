@@ -9,7 +9,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
     %w[userid password auth_key]
   end
 
-  def connect(options = {})
+  def connect(_options = {})
     self.class.raw_connect('y5yBMMyXXgKjDMKk7uuT_heaA674iW3LW4XF0koEldQI', '473f85b4-c4ba-4425-b495-d26c77365c91')
   end
 
@@ -23,23 +23,24 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
       if api_key.blank? || guid.blank?
         raise MiqException::MiqInvalidCredentialsError, _("Incorrect credentials - check your Azure Subscription ID")
       end
-      token = IAM_Token.new(api_key)
-      crn, region = self.get_service_crn_region(token, guid)
-      return {:token => token, :guid => guid, :crn => crn, :region => region}
+
+      token = IAMtoken.new(api_key)
+      crn, region = get_service_crn_region(token, guid)
+      {:token => token, :guid => guid, :crn => crn, :region => region}
     end
 
     def connection_rescue_block
-      print "rescue"
+      _log.info("rescue")
     end
 
     def environment_for(region)
       case region
       when /germany/i
-        print "germ"
+        _log.info("germ")
       when /usgov/i
-        print "usa"
+        _log.info("usa")
       else
-        print "else country"
+        _log.info("else country")
       end
     end
   end

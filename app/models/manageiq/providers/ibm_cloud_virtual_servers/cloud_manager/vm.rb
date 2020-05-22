@@ -1,6 +1,6 @@
 class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::Vm < ManageIQ::Providers::CloudManager::Vm
-  def provider_object(connection = nil)
-    connection ||= ext_management_system.connect
+  def provider_object(_connection = nil)
+    # connection ||= ext_management_system.connect
     # find vm instance via connection and return it
     # connection.find_instance(ems_ref)
     # but we return just an object for now

@@ -6,23 +6,25 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector::Network
   end
 
   def networks
-    self.connection
+    connection
 
-    self.get_networks(
+    get_networks(
       @connection[:token],
       @connection[:guid],
       @connection[:crn],
-      @connection[:region])
+      @connection[:region]
+    )
   end
 
-  def ports(networkId)
-    self.connection
+  def ports(network_id)
+    connection
 
-    self.get_ports(
+    get_ports(
       @connection[:token],
       @connection[:guid],
       @connection[:crn],
       @connection[:region],
-	  networkId)
+      network_id
+    )
   end
 end
