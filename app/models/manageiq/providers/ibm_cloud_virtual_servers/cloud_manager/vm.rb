@@ -1,32 +1,26 @@
 class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::Vm < ManageIQ::Providers::CloudManager::Vm
-  def provider_object(_connection = nil)
-    # connection ||= ext_management_system.connect
-    # find vm instance via connection and return it
-    # connection.find_instance(ems_ref)
-    # but we return just an object for now
-    OpenStruct.new
+  def provider_object(connection = nil)
+    connection.target_vmi(ems_ref)
   end
 
   def raw_start
-    with_provider_object(&:start)
+    with_provider_object({:target => 'control'}, &:power_on)
     # Temporarily update state for quick UI response until refresh comes along
     update!(:raw_power_state => "on")
   end
 
   def raw_stop
-    with_provider_object(&:stop)
+    with_provider_object({:target => 'control'}, &:power_off)
     # Temporarily update state for quick UI response until refresh comes along
     update!(:raw_power_state => "off")
   end
 
   def raw_pause
-    with_provider_object(&:pause)
     # Temporarily update state for quick UI response until refresh comes along
     update!(:raw_power_state => "paused")
   end
 
   def raw_suspend
-    with_provider_object(&:suspend)
     # Temporarily update state for quick UI response until refresh comes along
     update!(:raw_power_state => "suspended")
   end
