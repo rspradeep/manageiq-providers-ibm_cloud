@@ -12,7 +12,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::CloudManag
           :vendor            => 'ibm',
           :genealogy_parent  => "",
           :connection_state  => "connected",
-          :raw_power_state   => instance["status"],
+          :raw_power_state   => instance["status"] == 'ACTIVE' ? 'on' : 'off',
           :uid_ems           => instance["pvmInstanceID"],
         }
 
