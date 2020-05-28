@@ -21,13 +21,10 @@ class ManageIQ::Providers::IbmCloudVirtualServers::ControlAPI
     p "POWERING OFF: #{@vmi_id}"
     cloudVmiAction(:stop)
   end
-  
-  def hard_reboot
-    cloudVmiAction(:hard_reboot)
-  end
 
   def soft_reboot
-    cloudVmiAction(:soft_reboot)
+    p "REBOOTING OS FOR: #{@vmi_id}"
+    cloudVmiAction(:'soft-reboot')
   end
 
   private
@@ -50,7 +47,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::ControlAPI
         },
       )
     rescue RestClient::ExceptionWithResponse => e
-      e.response unless e.http_code == 200
+      e.response.body unless e.http_code == 200
     end
   end
 end
