@@ -13,22 +13,44 @@ class ManageIQ::Providers::IbmCloudVirtualServers::ControlAPI
   end
 
   def power_on
-    p "POWERING ON: " + @vmi_id if @vmi_id
-    # TODO: implement
+    p "POWERING ON: #{@vmi_id}"
+    cloudVmiAction(:start)
   end
   
   def power_off
-    p "POWERING OFF: " + @vmi_id if @vmi_id
-    # TODO: implement
+    p "POWERING OFF: #{@vmi_id}"
+    cloudVmiAction(:stop)
   end
   
   def hard_reboot
-    p "HARD REBOOTING: " + @vmi_id if @vmi_id
-    # TODO: implement
+    cloudVmiAction(:hard_reboot)
   end
 
   def soft_reboot
-    p "SOFT REBOOTING: " + @vmi_id if @vmi_id
-    # TODO: implement
+    cloudVmiAction(:soft_reboot)
+  end
+
+  private
+
+  def cloudVmiAction(action)
+    begin
+      response = RestClient.post(
+        "https://#{@creds[:region]}.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/#{@creds[:guid]}/pvm-instances/#{@vmi_id}/action",
+        
+        {
+          'action' => action 
+        }
+        .to_json,
+
+        {
+          'Authorization' => @creds[:token].get,
+          'CRN'           => @creds[:crn],
+          'Content-Type'  => 'application/json',
+          'Accept'        => 'application/json',
+        },
+      )
+    rescue RestClient::ExceptionWithResponse => e
+      e.response unless e.http_code == 200
+    end
   end
 end
