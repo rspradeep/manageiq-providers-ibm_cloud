@@ -166,15 +166,25 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
   # @param crn [String] the IBM Power Cloud instance CRN
   # @param region [String] the IBM Power Cloud instance region
   # @return [Hash] Image
-  def get_image(token, guid, crn, region, imageid)
-    response = RestClient.get(
-      "https://#{region}.power-iaas.cloud.ibm.com" \
-      "/pcloud/v1/cloud-instances/#{guid}/images/#{imageid}",
-      'Authorization' => token.get,
-      'CRN'           => crn,
-      'Content-Type'  => 'application/json'
-    )
+  def get_image(token, guid, crn, region, img_id)
+    assert img_id != nil
 
-    JSON.parse(response.body)
+    res = nil
+
+    begin
+      response = RestClient.get(
+        "https://#{region}.power-iaas.cloud.ibm.com" \
+        "/pcloud/v1/cloud-instances/#{guid}/images/#{img_id}",
+        'Authorization' => token.get,
+        'CRN'           => crn,
+        'Content-Type'  => 'application/json'
+      )
+
+      res = JSON.parse(response.body)
+    rescue
+      _log.error("Unable to retrieve/parse information on the following image: '#{img_id}'")
+    end
+
+    res
   end
 end

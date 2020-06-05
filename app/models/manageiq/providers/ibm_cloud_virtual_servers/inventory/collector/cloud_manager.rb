@@ -34,4 +34,15 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector::CloudMa
       @connection[:region]
     )
   end
+
+  def image(img_id)
+    connection
+    get_image(
+      @connection[:token],
+      @connection[:guid],
+      @connection[:crn],
+      @connection[:region],
+      img_id
+    )
+  end
 end
