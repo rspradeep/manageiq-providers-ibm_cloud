@@ -167,8 +167,6 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
   # @param region [String] the IBM Power Cloud instance region
   # @return [Hash] Image
   def get_image(token, guid, crn, region, img_id)
-    assert img_id != nil
-
     res = nil
 
     begin
