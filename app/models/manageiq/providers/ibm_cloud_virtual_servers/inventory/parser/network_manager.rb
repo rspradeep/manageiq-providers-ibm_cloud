@@ -18,7 +18,10 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::NetworkMan
         :ems_ref       => subnet_id,
         :gateway       => network['gateway'],
         :name          => "#{network['name']}-#{network['type']}",
-        :status        => "active"
+        :status        => "active",
+        :dns_nameservers => network['dnsServers'],
+        :ip_version    => '4',
+        :network_protocol => 'IPv4'
       )
 
       collector.ports(network['networkID']).each do |port|
