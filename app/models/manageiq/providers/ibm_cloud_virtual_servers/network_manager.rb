@@ -22,6 +22,6 @@ class ManageIQ::Providers::IbmCloudVirtualServers::NetworkManager < ManageIQ::Pr
   end
 
   def self.description
-    @description ||= "Ibm Cloud Networks".freeze
+    @description ||= "IBM Cloud Networks".freeze
   end
 end
