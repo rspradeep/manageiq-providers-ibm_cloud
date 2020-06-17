@@ -79,12 +79,14 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
       !!raw_connect(auth_key, pcloud_guid)
     end
 
+
     include ManageIQ::Providers::IbmCloudVirtualServers::APICalls
     def raw_connect(api_key, pcloud_guid)
       if api_key.blank? || pcloud_guid.blank?
         raise MiqException::MiqInvalidCredentialsError, _("Missing credentials")
       end
-      token = IAM_Token.new(api_key)
+
+      token = IAMtoken.new(api_key)
       crn, region = self.get_service_crn_region(token, pcloud_guid)
       {:token => token, :guid => pcloud_guid, :crn => crn, :region => region}
     end
