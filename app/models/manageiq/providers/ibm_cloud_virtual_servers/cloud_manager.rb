@@ -38,11 +38,6 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager < ManageIQ::Prov
     storage_manager.name = "Storage-Manager of '#{name}'"
   end
 
-  def self.validate_authentication_args(params)
-    # return args to be used in raw_connect
-    [params[:default_userid], ManageIQ::Password.encrypt(params[:default_password])]
-  end
-
   def self.hostname_required?
     # TODO: ExtManagementSystem is validating this
     false
@@ -53,6 +48,6 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager < ManageIQ::Prov
   end
 
   def self.description
-    @description ||= "Ibm Cloud Virtual Servers".freeze
+    @description ||= "IBM Power Systems Virtual Server".freeze
   end
 end
