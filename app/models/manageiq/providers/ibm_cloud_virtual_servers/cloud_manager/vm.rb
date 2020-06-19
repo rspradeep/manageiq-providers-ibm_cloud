@@ -1,7 +1,7 @@
 class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::Vm < ManageIQ::Providers::CloudManager::Vm
   supports     :reboot_guest
   supports_not :suspend
-  
+
   def provider_object(connection = nil)
     connection.target_vmi(ems_ref)
   end

@@ -6,21 +6,21 @@ class ManageIQ::Providers::IbmCloudVirtualServers::StorageManager < ManageIQ::Pr
   include ManageIQ::Providers::StorageManager::BlockMixin
 
   delegate :authentication_check,
-  :authentication_status,
-  :authentication_status_ok?,
-  :authentications,
-  :authentication_for_summary,
-  :zone,
-  :connect,
-  :verify_credentials,
-  :with_provider_connection,
-  :address,
-  :ip_address,
-  :hostname,
-  :default_endpoint,
-  :endpoints,
-  :to        => :parent_manager,
-  :allow_nil => true
+           :authentication_status,
+           :authentication_status_ok?,
+           :authentications,
+           :authentication_for_summary,
+           :zone,
+           :connect,
+           :verify_credentials,
+           :with_provider_connection,
+           :address,
+           :ip_address,
+           :hostname,
+           :default_endpoint,
+           :endpoints,
+           :to        => :parent_manager,
+           :allow_nil => true
 
   def self.ems_type
     @ems_type ||= "ibm_cloud_storage".freeze

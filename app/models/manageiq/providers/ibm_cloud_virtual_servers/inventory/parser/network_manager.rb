@@ -13,14 +13,14 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::NetworkMan
       subnet_id = "#{network['networkID']}-#{network['type']}"
 
       persister_cloud_subnet = persister.cloud_subnets.build(
-        :cloud_network => persister_cloud_networks,
-        :cidr          => network['cidr'],
-        :ems_ref       => subnet_id,
-        :gateway       => network['gateway'],
-        :name          => "#{network['name']}-#{network['type']}",
-        :status        => "active",
-        :dns_nameservers => network['dnsServers'],
-        :ip_version    => '4',
+        :cloud_network    => persister_cloud_networks,
+        :cidr             => network['cidr'],
+        :ems_ref          => subnet_id,
+        :gateway          => network['gateway'],
+        :name             => "#{network['name']}-#{network['type']}",
+        :status           => "active",
+        :dns_nameservers  => network['dnsServers'],
+        :ip_version       => '4',
         :network_protocol => 'IPv4'
       )
 

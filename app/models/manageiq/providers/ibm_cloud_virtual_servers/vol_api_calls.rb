@@ -2,7 +2,6 @@ module ManageIQ::Providers::IbmCloudVirtualServers::VolAPICalls
   require 'rest-client'
   require 'json'
 
-  
   def get_volumes(token, guid, crn, region)
     response = RestClient.get(
       "https://#{region}.power-iaas.cloud.ibm.com" \
@@ -20,7 +19,6 @@ module ManageIQ::Providers::IbmCloudVirtualServers::VolAPICalls
     volumes
   end
 
-  
   def get_volume(token, guid, crn, region, volume_id)
     response = RestClient.get(
       "https://#{region}.power-iaas.cloud.ibm.com" \

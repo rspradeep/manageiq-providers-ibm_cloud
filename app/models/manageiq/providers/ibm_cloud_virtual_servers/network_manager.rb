@@ -8,21 +8,21 @@ class ManageIQ::Providers::IbmCloudVirtualServers::NetworkManager < ManageIQ::Pr
   include ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
 
   delegate :authentication_check,
-    :authentication_status,
-    :authentication_status_ok?,
-    :authentications,
-    :authentication_for_summary,
-    :zone,
-    :connect,
-    :verify_credentials,
-    :with_provider_connection,
-    :address,
-    :ip_address,
-    :hostname,
-    :default_endpoint,
-    :endpoints,
-    :to        => :parent_manager,
-    :allow_nil => true
+           :authentication_status,
+           :authentication_status_ok?,
+           :authentications,
+           :authentication_for_summary,
+           :zone,
+           :connect,
+           :verify_credentials,
+           :with_provider_connection,
+           :address,
+           :ip_address,
+           :hostname,
+           :default_endpoint,
+           :endpoints,
+           :to        => :parent_manager,
+           :allow_nil => true
 
   def self.validate_authentication_args(params)
     # return args to be used in raw_connect

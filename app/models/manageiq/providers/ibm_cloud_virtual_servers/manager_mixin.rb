@@ -16,16 +16,16 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
 
     begin
       case options[:target]
-        when 'cloud'
-          api = creds # TODO: later return cloud_api instead
-        when 'network'
-          api = creds # TODO: later return network_api instead
-        when 'control'
-          api = ManageIQ::Providers::IbmCloudVirtualServers::ControlAPI.new(creds) # TODO: later return control_api instead
-        when nil, {}
-          api = creds
-        else
-          raise ArgumentError, "Unknown target API set: '#{options[:target]}''"
+      when 'cloud'
+        api = creds # TODO: later return cloud_api instead
+      when 'network'
+        api = creds # TODO: later return network_api instead
+      when 'control'
+        api = ManageIQ::Providers::IbmCloudVirtualServers::ControlAPI.new(creds) # TODO: later return control_api instead
+      when nil, {}
+        api = creds
+      else
+        raise ArgumentError, "Unknown target API set: '#{options[:target]}''"
       end
     end
 
@@ -79,7 +79,6 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
       !!raw_connect(auth_key, pcloud_guid)
     end
 
-
     include ManageIQ::Providers::IbmCloudVirtualServers::APICalls
     def raw_connect(api_key, pcloud_guid)
       if api_key.blank? || pcloud_guid.blank?
@@ -87,7 +86,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
       end
 
       token = IAMtoken.new(api_key)
-      crn, region = self.get_service_crn_region(token, pcloud_guid)
+      crn, region = get_service_crn_region(token, pcloud_guid)
       {:token => token, :guid => pcloud_guid, :crn => crn, :region => region}
     end
 

@@ -9,10 +9,10 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager < ManageIQ::Prov
   include ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
 
   has_one :storage_manager,
-    :foreign_key => :parent_ems_id,
-    :class_name  => "ManageIQ::Providers::IbmCloudVirtualServers::StorageManager",
-    :autosave    => true,
-    :dependent   => :destroy
+          :foreign_key => :parent_ems_id,
+          :class_name  => "ManageIQ::Providers::IbmCloudVirtualServers::StorageManager",
+          :autosave    => true,
+          :dependent   => :destroy
 
   before_create :ensure_managers
   before_create :ensure_managers_zone

@@ -1,3 +1,3 @@
 class ManageIQ::Providers::IbmCloudVirtualServers::StorageManager::CloudVolume < ::CloudVolume
-     # TODO: implement
+  # TODO: implement
 end
