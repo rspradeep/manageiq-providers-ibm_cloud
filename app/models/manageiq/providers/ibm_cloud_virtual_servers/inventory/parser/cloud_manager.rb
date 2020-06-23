@@ -104,7 +104,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::CloudManag
 
     sshkeys do |tenant_key|
       # save the tenant instance
-      perisister.ssh_keys.build(tenant_key)
+      perisister.key_pairs.build(tenant_key)
     end
   end
 end
