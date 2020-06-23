@@ -2,25 +2,25 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::CloudManag
   def instances
     collector.vms.each do |instance|
       vmi =
-        {
-          :availability_zone => "",
-          :description       => "IBM Cloud Server",
-          :ems_ref           => instance["pvmInstanceID"],
-          :flavor            => "",
-          :location          => "unknown",
-          :name              => instance["serverName"],
-          :vendor            => 'ibm',
-          :genealogy_parent  => "",
-          :connection_state  => "connected",
-          :raw_power_state   => instance["status"] == 'ACTIVE' ? 'on' : 'off',
-          :uid_ems           => instance["pvmInstanceID"],
-        }
+      {
+        :availability_zone => "",
+        :description       => "IBM Cloud Server",
+        :ems_ref           => instance["pvmInstanceID"],
+        :flavor            => "",
+        :location          => "unknown",
+        :name              => instance["serverName"],
+        :vendor            => 'ibm',
+        :genealogy_parent  => "",
+        :connection_state  => "connected",
+        :raw_power_state   => instance["status"] == 'ACTIVE' ? 'on' : 'off',
+        :uid_ems           => instance["pvmInstanceID"],
+      }
 
       hardw =
-        {
-          :cpu_total_cores => Float(instance['processors']).ceil,
-          :memory_mb       => Integer(instance['memory']) * 1024,
-        }
+      {
+        :cpu_total_cores => Float(instance['processors']).ceil,
+        :memory_mb       => Integer(instance['memory']) * 1024,
+      }
 
       img_id = instance['imageID']
 
@@ -30,7 +30,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::CloudManag
 
   def pub_img_os(img_id)
     image = collector.image(img_id)
-    !image.nil? ? image['specifications']['operatingSystem'] : nil
+    os = (image != nil) ? image['specifications']['operatingSystem'] : nil
   end
 
   def images
@@ -43,8 +43,8 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::CloudManag
       endian  = ibm_image['specifications']['endianness']
       desc    = "System: #{os}, Architecture: #{arch}, Endianess: #{endian}"
 
-      image =
-        {
+      image = 
+      {
           :uid_ems            => id,
           :ems_ref            => id,
           :name               => name,
@@ -55,9 +55,27 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::CloudManag
           :raw_power_state    => "never",
           :template           => true,
           :publicly_available => true,
-        }
+      }
 
       yield image, os
+    end
+  end
+
+  def sshkeys
+    collector.sshkeys.each do |keyindx|
+      tenant_name = keyindx[:tenant_name]
+      tenant_id   = keyindx[:tenant_id]
+      keyindx[:tenant_sshkeys].each do |tkey|
+        tenant_key =
+        {
+          :creationDate => tkeys['creationDate'],
+          :name         => tkey['name'],
+          :sshKey       => tkey['sshKey'],
+          :tenant_name  => tenant_name,
+          :tenant_id    => tenant_id,
+        }
+        yield tenant_key
+      end
     end
   end
 
@@ -82,6 +100,11 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::CloudManag
       os ||= pub_img_os(img_id)
       system = {:vm_or_template => ps_vmi, :product_name => os}
       persister.operating_systems.build(system)
+    end
+
+    sshkeys do |tenant_key|
+      # save the tenant instance
+      perisister.ssh_keys.build(tenant_key)
     end
   end
 end

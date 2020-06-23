@@ -185,4 +185,48 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
 
     res
   end
+
+  # Get all ssh_keys in an IBM Power Cloud instance
+  #
+  # @param token [IAMtoken] the IBM Cloud IAM Token object
+  # @return Array[Strings] where each string is the account_id
+  #
+  def get_pvstenantid(token)
+    response = RestClient.get(
+    "https://resource-controller.cloud.ibm.com/v2/resource_instances",
+    'Authorization' => token.get,
+    )
+  
+    plst = []
+    JSON.parse(response.body)['resources'].each do |resource|
+      if resource['crn'].include? "power-iaas"
+        plst << { :region => resource['region_id'], 
+                  :name => resource['name'], 
+                  :tenant_id => resource['account_id'], 
+                  :crn =>resource['crn'] 
+                }
+      end
+    end
+    plst
+  end
+
+  # Get all ssh_keys in an IBM Power Cloud instance
+  #
+  # @param token [IAMtoken] the IBM Cloud IAM Token object
+  # @param tenant [:region, :tenant_id, :crn]
+  # @return [Array<Hash>] all ssh keys for this instance
+  def get_sshkeys(token, tenant)
+    response = RestClient.get(
+      "https://#{tenant[:region]}.power-iaas.cloud.ibm.com/pcloud/v1/tenants/#{tenant[:tenant_id]}",
+      'Authorization' => token.get,
+      'crn' => tenant[:crn]
+    )
+    sshkeys = JSON.parse(response.body)['sshKeys']
+    sshkeys
+  end
+
+  # Get an IBM Power Cloud image
+  #
+  # @param token [IAMtoken] the IBM Cloud IAM Token object
+  # @param guid [String] the IBM Power Cloud instance GUID
 end
