@@ -68,11 +68,8 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::CloudManag
       keyindx[:tenant_sshkeys].each do |tkey|
         tenant_key =
         {
-          :creationDate => tkeys['creationDate'],
-          :name         => tkey['name'],
-          :sshKey       => tkey['sshKey'],
-          :tenant_name  => tenant_name,
-          :tenant_id    => tenant_id,
+          :name     => tkey['name'],
+          :auth_key => tkey['sshKey'],
         }
         yield tenant_key
       end
@@ -104,7 +101,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::CloudManag
 
     sshkeys do |tenant_key|
       # save the tenant instance
-      perisister.key_pairs.build(tenant_key)
+      persister.key_pairs.build(tenant_key)
     end
   end
 end

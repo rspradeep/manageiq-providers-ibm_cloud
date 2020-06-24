@@ -53,13 +53,13 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector::CloudMa
     )
   
     sshlst = []
-    plst.each do | |tenant_id|
-      tenant_sshkeys = get_pcloudpsshkeys(
+    plst.each do |tenant|
+      tenant_sshkeys = get_sshkeys(
           @connection[:token],
           tenant
         )
       sshlst << { :tenant_name    => tenant[:name],
-                  :tenant_id      => tenant_id, 
+                  :tenant_id      => tenant[:tenant_id], 
                   :tenant_sshkeys => tenant_sshkeys
                 } 
     end

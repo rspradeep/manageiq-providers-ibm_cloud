@@ -222,6 +222,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
       'crn' => tenant[:crn]
     )
     sshkeys = JSON.parse(response.body)['sshKeys']
+    _log.info("In function get_sshkeys: '#{sshkeys}'")
     sshkeys
   end
 
