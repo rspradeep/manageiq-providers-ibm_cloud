@@ -25,6 +25,17 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector::CloudMa
     )
   end
 
+  def image(img_id)
+    connection
+    get_image(
+      @connection[:token],
+      @connection[:guid],
+      @connection[:crn],
+      @connection[:region],
+      img_id
+    )
+  end
+
   def images
     connection
     get_images(
@@ -35,14 +46,13 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector::CloudMa
     )
   end
 
-  def image(img_id)
+  def volumes
     connection
-    get_image(
+    get_volumes(
       @connection[:token],
       @connection[:guid],
       @connection[:crn],
-      @connection[:region],
-      img_id
+      @connection[:region]
     )
   end
 end
