@@ -19,9 +19,9 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
       when 'cloud'
         api = creds # TODO: later return cloud_api instead
       when 'network'
-        api = creds # TODO: later return network_api instead
+        api = ManageIQ::Providers::IbmCloudVirtualServers::NetControlAPI.new(creds)
       when 'control'
-        api = ManageIQ::Providers::IbmCloudVirtualServers::ControlAPI.new(creds) # TODO: later return control_api instead
+        api = ManageIQ::Providers::IbmCloudVirtualServers::ControlAPI.new(creds)
       when nil, {}
         api = creds
       else
