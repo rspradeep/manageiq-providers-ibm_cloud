@@ -22,11 +22,16 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::CloudManag
         :memory_mb       => Integer(instance['memory']) * 1024,
       }
 
-      img_id = instance['imageID']
+      vol_ids  = instance['volumeIDs'] 
 
-      yield vmi, hardw, img_id
+      img_id   = instance['imageID']
+
+      pub_nets = instance['networks'].reject {|net| net['externalIP'].blank?}
+
+      yield vmi, hardw, vol_ids, img_id, pub_nets
     end
   end
+
 
   def pub_img_os(img_id)
     image = collector.image(img_id)
@@ -43,7 +48,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::CloudManag
       endian  = ibm_image['specifications']['endianness']
       desc    = "System: #{os}, Architecture: #{arch}, Endianess: #{endian}"
 
-      image = 
+      image =
       {
           :uid_ems            => id,
           :ems_ref            => id,
@@ -76,6 +81,26 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::CloudManag
     end
   end
 
+  def volumes
+    collector.volumes.each do |vol|s
+      volume =
+        {
+          :ems_ref           => vol['volumeID'],
+          :name              => vol['name'],
+          :status            => vol['state'],
+          :bootable          => vol['bootable'],
+          :creation_time     => vol['creationDate'],
+          :description       => 'IBM Cloud Block-Storage Volume',
+          :volume_type       => vol['diskType'],
+          :size              => vol['size'],
+          :availability_zone => Zone.default_zone,
+        }
+
+      yield volume
+    end
+  end
+
+
   def parse
     img_to_os = {}
 
@@ -84,13 +109,32 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::CloudManag
       persister.miq_templates.build(image)
     end
 
-    instances do |vmi, hardw, img_id|
+    volumes do  |volume|
+      ps_vol = persister.cloud_volumes.build(volume)
+    end
+
+    instances do |vmi, hardw, vol_ids, img_id, pub_ports|
       # saving general VMI information
       ps_vmi = persister.vms.build(vmi)
 
       # saving hardware information (CPU, Memory, etc.)
       hardw[:vm_or_template] = ps_vmi
-      persister.hardwares.build(hardw)
+      ps_hw = persister.hardwares.build(hardw)
+
+      # saving instance disk information
+      vol_ids.each do |vol_id|
+        disk = persister.disks.find_or_build_by(
+          :hardware    => ps_hw,
+          :device_name => vol_id
+        )
+        
+        disk.assign_attributes(
+            :device_type     => 'block',
+            :controller_type => 'ibm',
+            :backing         => persister.cloud_volumes.find(vol_id),
+            :location        => vol_id,
+            :size            => 20)
+      end
 
       # saving OS information
       os = img_to_os[img_id]

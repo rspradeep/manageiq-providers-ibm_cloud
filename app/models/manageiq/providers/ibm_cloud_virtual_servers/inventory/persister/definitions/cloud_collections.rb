@@ -6,6 +6,8 @@ module ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister::Defini
       add_collection(cloud, name)
     end
 
+    add_collection(storage, :cloud_volumes)
+
     add_miq_templates
   end
 
