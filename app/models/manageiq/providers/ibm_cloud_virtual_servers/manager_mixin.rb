@@ -17,13 +17,17 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
     begin
       case options[:target]
       when 'cloud'
-        api = creds # TODO: later return cloud_api instead
+        #api = creds # TODO: later return cloud_api instead
+        api = ManageIQ::Providers::IbmCloudVirtualServers::CloudControlAPI.new(creds)
+        _log.info("ZKN: Created Cloud Control API\n")
       when 'network'
         api = ManageIQ::Providers::IbmCloudVirtualServers::NetControlAPI.new(creds)
       when 'control'
         api = ManageIQ::Providers::IbmCloudVirtualServers::ControlAPI.new(creds)
       when nil, {}
-        api = creds
+        #api = creds
+        api = ManageIQ::Providers::IbmCloudVirtualServers::CloudControlAPI.new(creds)
+        _log.info("ZKN: options[:target] is none, setting it to cloudcontrol\n")
       else
         raise ArgumentError, "Unknown target API set: '#{options[:target]}''"
       end
@@ -31,6 +35,13 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
 
     api
   end
+
+
+  def create_key_pair(nm)
+    ibm_cvs_key = Struct.new(:name)
+    ibm_cvs_key.new(nm)
+  end
+
 
   def verify_credentials(_auth_type = nil, options = {})
     connect(options)
