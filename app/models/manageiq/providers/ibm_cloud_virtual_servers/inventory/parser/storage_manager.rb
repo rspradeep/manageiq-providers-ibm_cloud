@@ -1,4 +1,2 @@
-class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::StorageManager < ManageIQ::Providers::Inventory::Parser
-  def parse
-  end
+class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::StorageManager < ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser
 end
