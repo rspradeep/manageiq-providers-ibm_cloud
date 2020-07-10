@@ -18,8 +18,33 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudControlAPI
     JSON.parse(response.body)
   end
 
-  def create_key_pair(nm)
-    ibm_cvs_key = Struct.new(:name)
-    ibm_cvs_key.new(nm)
+  def create_key_pair(name, sshkey)
+    response = RestClient.post(
+        "https://#{@creds[:region]}.power-iaas.cloud.ibm.com/" \
+        "pcloud/v1/tenants/#{@creds[:tenant_id]}/sshkeys",
+        {
+          "name"   => name,
+          "sshkey" => sshkey
+        }.to_json,
+        headers={
+          'Authorization' => @creds[:token].get,
+          'CRN'           => @creds[:crn],
+          'Content-Type'  => 'application/json'
+        }
+      )
+    JSON.parse(response.body)
+  end
+
+  def delete_key_pair(name)
+      response = RestClient.delete(
+        "https://#{@creds[:region]}.power-iaas.cloud.ibm.com/" \
+        "pcloud/v1/tenants/#{@creds[:tenant_id]}/sshkeys/#{name}",
+        headers={
+          'Authorization' => @creds[:token].get,
+          'CRN'           => @creds[:crn],
+          'Content-Type'  => 'application/json'
+        }
+      )
+     JSON.parse(response.body)
   end
 end
