@@ -2,22 +2,20 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::NetworkMan
   def parse
     collector.networks.each do |network|
       persister_cloud_networks = persister.cloud_networks.build(
-        :ems_ref             => network['networkID'],
-        :name                => network['name'],
+        :ems_ref             => "#{network['networkID']}-#{network['type']}",
+        :name                => "#{network['name']}-#{network['type']}",
         :cidr                => '',
         :enabled             => true,
         :orchestration_stack => '',
         :status              => 'active'
       )
 
-      subnet_id = "#{network['networkID']}-#{network['type']}"
-
       persister_cloud_subnet = persister.cloud_subnets.build(
         :cloud_network    => persister_cloud_networks,
         :cidr             => network['cidr'],
-        :ems_ref          => subnet_id,
+        :ems_ref          => network['networkID'],
+        :name             => network['name'],
         :gateway          => network['gateway'],
-        :name             => "#{network['name']}-#{network['type']}",
         :status           => "active",
         :dns_nameservers  => network['dnsServers'],
         :ip_version       => '4',
@@ -34,8 +32,6 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser::NetworkMan
           :mac_address => port['macAddress'],
           :device_ref  => vmi_id,
           :device      => persister.vms.lazy_find(vmi_id)
-          #:security_groups => '',
-          #:source          => '',
         )
 
         persister.cloud_subnet_network_ports.build(
