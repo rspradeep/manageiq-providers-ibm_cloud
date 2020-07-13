@@ -144,7 +144,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
   def get_images(token, guid, crn, region)
     response = RestClient.get(
       "https://#{region}.power-iaas.cloud.ibm.com" \
-      "/pcloud/v1/cloud-instances/#{guid}/images",
+      "/pcloud/v1/images",
       'Authorization' => token.get,
       'CRN'           => crn,
       'Content-Type'  => 'application/json'

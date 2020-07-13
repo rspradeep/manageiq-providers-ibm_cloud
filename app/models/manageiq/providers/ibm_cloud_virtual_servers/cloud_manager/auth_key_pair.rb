@@ -5,9 +5,14 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::AuthKeyPair < M
 
   def self.raw_create_key_pair(ext_management_system, create_options)
     cvs = ext_management_system.connect(:target => "cloud")
+    _log.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    _log.info("ABC-KULDIP, Able to get the cvs")
     kp = cvs.create_key_pair(create_options[:name], create_options[:public_key])
+    _log.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    _log.info("ABC-KULDIP, Able to cvs.create_key_pair")
     IbmCvsKeyPair.new(kp["name"], kp["name"], nil, nil)
   rescue => err
+    _log.log_backtrace(err)
     _log.error "keypair=[#{name}], error: #{err}"
     raise MiqException::Error, err.to_s, err.backtrace
   end
@@ -25,7 +30,12 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::AuthKeyPair < M
   def raw_delete_key_pair
     cvs = resource.connect(:target => "cloud")
     kp = cvs.delete_key_pair(name)
+    _log.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    _log.info("Delete Key Results are as follows")
+    _log.info(kp)
+    _log.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
   rescue => err
+    _log.log_backtrace(err)
     _log.error "keypair=[#{name}], error: #{err}"
     raise MiqException::Error, err.to_s, err.backtrace
   end
