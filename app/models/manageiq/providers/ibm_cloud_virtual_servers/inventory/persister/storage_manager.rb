@@ -1,4 +1,2 @@
-class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister::StorageManager < ManageIQ::Providers::Inventory::Persister
-  def initialize_inventory_collections
-  end
+class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister::StorageManager < ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister
 end
