@@ -63,6 +63,6 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister < Manage
   end
 
   def storage_manager
-    manager.kind_of?(EmsStorage) ? manager : manager.storage_manager
+    manager.kind_of?(ManageIQ::Providers::StorageManager) ? manager : manager.storage_manager
   end
 end
