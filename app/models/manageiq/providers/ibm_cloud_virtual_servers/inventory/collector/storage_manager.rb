@@ -1,2 +1,2 @@
-class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector::StorageManager < ManageIQ::Providers::Inventory::Collector
+class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector::StorageManager < ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector
 end

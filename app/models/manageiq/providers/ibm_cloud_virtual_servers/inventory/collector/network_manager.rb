@@ -1,2 +1,2 @@
-class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector::NetworkManager < ManageIQ::Providers::Inventory::Collector
+class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector::NetworkManager < ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector
 end

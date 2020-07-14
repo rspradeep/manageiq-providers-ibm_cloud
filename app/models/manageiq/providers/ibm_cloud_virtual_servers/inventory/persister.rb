@@ -3,6 +3,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister < Manage
   require_nested :NetworkManager
   require_nested :StorageManager
 
+
   def initialize_inventory_collections
     initialize_cloud_inventory_collections
     initialize_network_inventory_collections
@@ -24,6 +25,12 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister < Manage
   def initialize_network_inventory_collections
     %i[cloud_networks cloud_subnets network_ports cloud_subnet_network_ports availability_zones].each do |name|
       add_network_collection(name)
+    end
+  end
+
+  def initialize_storage_inventory_collections
+    %i[cloud_volumes].each do |name|
+      add_storage_collection(name)
     end
   end
 
