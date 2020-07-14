@@ -27,6 +27,12 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister < Manage
     end
   end
 
+  def initialize_storage_inventory_collections
+    %i[cloud_volumes].each do |name|
+      add_storage_collection(name)
+    end
+  end
+
   def add_cloud_collection(name)
     add_collection(cloud, name) do |builder|
       builder.add_properties(:parent => cloud_manager)

@@ -21,6 +21,8 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
         api = ManageIQ::Providers::IbmCloudVirtualServers::CloudControlAPI.new(creds)
       when 'network'
         api = ManageIQ::Providers::IbmCloudVirtualServers::NetControlAPI.new(creds)
+      when 'storage'
+        api = ManageIQ::Providers::IbmCloudVirtualServers::VolControlAPI.new(creds)
       when 'control'
         api = ManageIQ::Providers::IbmCloudVirtualServers::ControlAPI.new(creds)
       when nil, {}
