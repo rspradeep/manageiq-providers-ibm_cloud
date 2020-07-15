@@ -71,7 +71,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
   end
 
   def volumes
-    collector.volumes.each do |vol|s
+    collector.volumes.each do |vol|
       volume =
         {
           :ems_ref           => vol['volumeID'],
