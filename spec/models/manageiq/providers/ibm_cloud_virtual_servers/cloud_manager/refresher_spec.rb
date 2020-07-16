@@ -5,7 +5,7 @@ describe ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::Refresher do
 
   context "#refresh" do
     let(:ems) do
-      uid_ems  = Rails.application.secrets.ibmcvs.try(:[], :guid) || "IBMCVS_GUID"
+      uid_ems  = "473f85b4-c4ba-4425-b495-d26c77365c91"
       auth_key = Rails.application.secrets.ibmcvs.try(:[], :api_key) || "IBMCVS_API_KEY"
 
       FactoryBot.create(:ems_ibm_cloud_virtual_servers_cloud, :uid_ems => uid_ems, :provider_region => "us-south").tap do |ems|

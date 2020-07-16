@@ -116,7 +116,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:44:23 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/images
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/images
     body:
       encoding: US-ASCII
       string: ''
@@ -130,7 +130,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -169,7 +169,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:44:26 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/images/b4ae82e3-51c2-49a3-9071-81f668232ed4
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/images/b4ae82e3-51c2-49a3-9071-81f668232ed4
     body:
       encoding: US-ASCII
       string: ''
@@ -183,7 +183,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -222,7 +222,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:44:30 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/images/7659226a-a7c0-4b80-80b8-07da597c49de
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/images/7659226a-a7c0-4b80-80b8-07da597c49de
     body:
       encoding: US-ASCII
       string: ''
@@ -236,7 +236,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -275,7 +275,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:44:46 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/images/1893089d-8660-4f51-a5ba-d42104dcd134
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/images/1893089d-8660-4f51-a5ba-d42104dcd134
     body:
       encoding: US-ASCII
       string: ''
@@ -289,7 +289,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -328,7 +328,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:44:49 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/images/00a7ff6c-c010-4067-8c59-c056a8724f52
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/images/00a7ff6c-c010-4067-8c59-c056a8724f52
     body:
       encoding: US-ASCII
       string: ''
@@ -342,7 +342,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -381,7 +381,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:44:51 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/images/bea06d9b-baf6-4d5f-8a0a-63b0012fc0c7
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/images/bea06d9b-baf6-4d5f-8a0a-63b0012fc0c7
     body:
       encoding: US-ASCII
       string: ''
@@ -395,7 +395,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -434,7 +434,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:44:53 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/volumes
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/volumes
     body:
       encoding: US-ASCII
       string: ''
@@ -448,7 +448,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -487,7 +487,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:44:56 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/volumes/37caecb6-6a33-4a62-a2ac-cf059cef9c5d
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/volumes/37caecb6-6a33-4a62-a2ac-cf059cef9c5d
     body:
       encoding: US-ASCII
       string: ''
@@ -501,7 +501,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -540,7 +540,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:44:56 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/volumes/875af2cd-9ca6-4285-9c6d-7877b2b17882
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/volumes/875af2cd-9ca6-4285-9c6d-7877b2b17882
     body:
       encoding: US-ASCII
       string: ''
@@ -554,7 +554,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -593,7 +593,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:44:56 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/volumes/5a49638d-0841-4a97-b768-4f36dd3d6da8
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/volumes/5a49638d-0841-4a97-b768-4f36dd3d6da8
     body:
       encoding: US-ASCII
       string: ''
@@ -607,7 +607,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -646,7 +646,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:44:57 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/pvm-instances
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/pvm-instances
     body:
       encoding: US-ASCII
       string: ''
@@ -660,7 +660,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -699,7 +699,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:44:58 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/pvm-instances/7effc17f-f708-48f0-862d-4177fabf62fe
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/pvm-instances/7effc17f-f708-48f0-862d-4177fabf62fe
     body:
       encoding: US-ASCII
       string: ''
@@ -713,7 +713,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -752,7 +752,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:45:02 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/pvm-instances/ce5dfa03-7533-4210-a2d6-ecc72dbe7aaa
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/pvm-instances/ce5dfa03-7533-4210-a2d6-ecc72dbe7aaa
     body:
       encoding: US-ASCII
       string: ''
@@ -766,7 +766,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -805,7 +805,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:45:07 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/images/dd22588b-a8fd-47e8-bb14-a89cd1f49242
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/images/dd22588b-a8fd-47e8-bb14-a89cd1f49242
     body:
       encoding: US-ASCII
       string: ''
@@ -819,7 +819,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -858,7 +858,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:45:09 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/images/318599f4-36c2-43aa-9a61-6ea98e44db98
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/images/318599f4-36c2-43aa-9a61-6ea98e44db98
     body:
       encoding: US-ASCII
       string: ''
@@ -872,7 +872,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -912,7 +912,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:45:09 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/networks
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/networks
     body:
       encoding: US-ASCII
       string: ''
@@ -926,7 +926,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -965,7 +965,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:45:11 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/networks/339fc829-8c70-41dd-84c1-ca4b3a608b88
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/networks/339fc829-8c70-41dd-84c1-ca4b3a608b88
     body:
       encoding: US-ASCII
       string: ''
@@ -979,7 +979,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -1018,7 +1018,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:45:12 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/networks/b074b7bc-a149-4122-8ef2-838e31c263fc
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/networks/b074b7bc-a149-4122-8ef2-838e31c263fc
     body:
       encoding: US-ASCII
       string: ''
@@ -1032,7 +1032,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -1071,7 +1071,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:45:13 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/networks/fe83beac-4c85-47a3-9aa5-4a7aecaca579
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/networks/fe83beac-4c85-47a3-9aa5-4a7aecaca579
     body:
       encoding: US-ASCII
       string: ''
@@ -1085,7 +1085,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -1124,7 +1124,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:45:14 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/networks/339fc829-8c70-41dd-84c1-ca4b3a608b88/ports
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/networks/339fc829-8c70-41dd-84c1-ca4b3a608b88/ports
     body:
       encoding: US-ASCII
       string: ''
@@ -1138,7 +1138,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -1177,7 +1177,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:45:15 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/networks/b074b7bc-a149-4122-8ef2-838e31c263fc/ports
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/networks/b074b7bc-a149-4122-8ef2-838e31c263fc/ports
     body:
       encoding: US-ASCII
       string: ''
@@ -1191,7 +1191,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
@@ -1229,7 +1229,7 @@ http_interactions:
   recorded_at: Wed, 15 Jul 2020 21:45:16 GMT
 - request:
     method: get
-    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/IBMCVS_GUID/networks/fe83beac-4c85-47a3-9aa5-4a7aecaca579/ports
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/networks/fe83beac-4c85-47a3-9aa5-4a7aecaca579/ports
     body:
       encoding: US-ASCII
       string: ''
@@ -1243,7 +1243,7 @@ http_interactions:
       Authorization:
       - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
       Crn:
-      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:IBMCVS_GUID::'
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
       Content-Type:
       - application/json
   response:
