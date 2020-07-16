@@ -1,4 +1,5 @@
 class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister < ManageIQ::Providers::Inventory::Persister
+  require "byebug"
   require_nested :CloudManager
   require_nested :NetworkManager
   require_nested :StorageManager
@@ -16,6 +17,8 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister < Manage
       add_cloud_collection(name)
     end
 
+    add_key_pairs
+
     add_cloud_collection(:miq_templates) do |builder|
       builder.add_properties(:model_class => ::ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::Template)
     end
@@ -30,6 +33,12 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister < Manage
   def initialize_storage_inventory_collections
     %i[cloud_volumes].each do |name|
       add_storage_collection(name)
+    end
+  end
+
+  def add_key_pairs(extra_properties = {})
+    add_collection(cloud, :key_pairs, extra_properties) do |b|
+      b.add_properties(:model_class => ::ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::AuthKeyPair)
     end
   end
 

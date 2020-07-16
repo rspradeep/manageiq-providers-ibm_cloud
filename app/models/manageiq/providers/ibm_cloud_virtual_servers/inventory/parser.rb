@@ -1,4 +1,5 @@
 class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ::Providers::Inventory::Parser
+  require "byebug"
   require_nested :CloudManager
   require_nested :NetworkManager
   require_nested :StorageManager
@@ -71,7 +72,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
   end
 
   def volumes
-    collector.volumes.each do |vol|s
+    collector.volumes.each do |vol|
       volume =
         {
           :ems_ref           => vol['volumeID'],
@@ -89,6 +90,16 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
     end
   end
 
+  def sshkeys
+    collector.sshkeys.each do |tkey|
+      tenant_key = {
+        :creationDate => tkey['creationDate'],
+        :name         => tkey['name'],
+        :sshKey       => tkey['sshKey'],
+      }
+      yield tenant_key
+    end
+  end
 
   def parse
     img_to_os = {}
@@ -176,6 +187,13 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
           :cloud_subnet => persister_cloud_subnet
         )
       end
+    end
+
+    sshkeys do |tenant_key|
+      # save the tenant instance
+      _log.info("KULDIP: This is okay till here")
+      persister.key_pairs.build(:name => tenant_key[:name])
+
     end
   end
 end

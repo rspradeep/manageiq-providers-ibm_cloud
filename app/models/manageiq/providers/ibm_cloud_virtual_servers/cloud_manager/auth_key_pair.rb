@@ -34,6 +34,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::AuthKeyPair < M
     _log.info("Delete Key Results are as follows")
     _log.info(kp)
     _log.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    #EmsRefresh.queue_refresh(ems.cloud_manager)
   rescue => err
     _log.log_backtrace(err)
     _log.error "keypair=[#{name}], error: #{err}"

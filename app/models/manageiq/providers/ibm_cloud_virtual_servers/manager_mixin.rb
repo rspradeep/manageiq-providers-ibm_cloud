@@ -12,7 +12,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
   def connect(options = {})
     auth_key = authentication_key(options[:auth_type])
     creds = self.class.raw_connect(auth_key, uid_ems)
-    api = nil
+    api = creds
 
     begin
       case options[:target]
@@ -28,9 +28,9 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
       when 'control'
         api = ManageIQ::Providers::IbmCloudVirtualServers::ControlAPI.new(creds)
       when nil, {}
-        api = ManageIQ::Providers::IbmCloudVirtualServers::CloudControlAPI.new(creds)
+        api = creds
       else
-        raise ArgumentError, "Unknown target API set: '#{options[:target]}''"
+        raise ArgumentError, "GETTING A CONNECT ERROR &&&& Unknown target API set: '#{options[:target]}''"
       end
     end
 

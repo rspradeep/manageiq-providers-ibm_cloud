@@ -152,9 +152,10 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
 
     images = []
     JSON.parse(response.body)['images'].each do |image|
-      images << get_image(
-        token, guid, crn, region, image['imageID']
-      )
+      image = get_image(token, guid, crn, region, image['imageID'])
+      if image
+        images << image
+      end
     end
     images
   end
@@ -172,7 +173,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
     begin
       response = RestClient.get(
         "https://#{region}.power-iaas.cloud.ibm.com" \
-        "/pcloud/v1/cloud-instances/#{guid}/images/#{img_id}",
+        "/pcloud/v1/cloud-instances/images/#{img_id}",
         'Authorization' => token.get,
         'CRN'           => crn,
         'Content-Type'  => 'application/json'
