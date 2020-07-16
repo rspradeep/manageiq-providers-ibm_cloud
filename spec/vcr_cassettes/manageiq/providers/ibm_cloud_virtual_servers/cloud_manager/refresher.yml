@@ -1,0 +1,1283 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://iam.cloud.ibm.com/identity/token
+    body:
+      encoding: UTF-8
+      string: grant_type=urn%3Aibm%3Aparams%3Aoauth%3Agrant-type%3Aapikey&apikey=IBMCVS_API_KEY
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Content-Length:
+      - '111'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transaction-Id:
+      - 6f9fc6a5b3d74c7595582bcf5cab7a1a
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Content-Language:
+      - en-US
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Date:
+      - Wed, 15 Jul 2020 21:44:22 GMT
+      Content-Length:
+      - '1722'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - sessioncookie=9a55c14cf159759e9c1f2c9abd4b5d68; Path=/; Secure; HttpOnly
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:44:22 GMT
+- request:
+    method: get
+    uri: https://resource-controller.cloud.ibm.com/v2/resource_instances
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Request-Id:
+      - 1a44dca9233d4df1015d23734fcb063b
+      Retry-After:
+      - '0'
+      Transaction-Id:
+      - bss-c38120a68e982c21
+      X-Global-Transaction-Id:
+      - bss-c38120a68e982c21
+      X-Ratelimit-Limit:
+      - '120'
+      X-Ratelimit-Remaining:
+      - '119'
+      X-Ratelimit-Reset:
+      - '0'
+      X-Request-Id:
+      - 1a44dca9233d4df1015d23734fcb063b
+      X-Transaction-Id:
+      - bss-c38120a68e982c21
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Expires:
+      - Wed, 15 Jul 2020 21:44:23 GMT
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Pragma:
+      - no-cache
+      Date:
+      - Wed, 15 Jul 2020 21:44:23 GMT
+      Content-Length:
+      - '17129'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:44:23 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/images
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:44:26 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d49a3f35eaf3bf9b7d680c6f01f5663f61594849464; expires=Fri, 14-Aug-20
+        21:44:24 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f608a75200000f02be96b200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36aa1eeb780f02-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA+SWwY7TMBCG7zyGzxk6dmzH8RGtkPbAiXIBcZjYTtfaNols70K12ndHaaGisF16odLCLRrNb88//jSTBxY3tAqZ2U8PzKVAJY7DFZXALBMoEFACmiU3Vmgr2teI+JFVzIfsUpzmZGYZq9hNCj2zbDG59XjnF/d8sfuAOORCgwt50YVeC8Op995Lo7Uhqp3vG9l3XHjJF/tCFp2kYESoQXEnQLZUQ4sNB8N7rY2oRfCSVfuyr6+YZWcK1pTLh8lTCU/ba6w82BtoM2c0HBFQASpWsTwFF/vodh3KzD4wSu4mluDKXZqzp8np+SI3DoXiENLbMW2ozBVSCnPTYr49xBJ9YRULg480DCHnOS2uYB+YG7qdQrqPeUzL7bQ7/mY7/fD9PZTL6G5ZxcYpJCpxWL3f5hI2zDKKX9ljxXLZWyVX4v1cQi5j+llPg6fkYR1W5LbssTrBgADBl1zZWlleX4CBRqtWCE1AjUOQnUEw2BnAxpNqGydbH44YOFNwgoGDvacYELinhP/nDGjAdsnRKmE5vwAD3LQ1mtaD0RpB9ooDqY7AS8FReud5fTwHzhScYOBgr7Z1/QsD12/eRWgEYAuI9UvjIHab+DdAkK3l6gIgIFLT99qBQ44gUTdgnGrBodJkGiF7JY5AOFPwJxDQon4WBMCXNxTOhKHEkPiz+0AuBbe1seoS+6ALhNq3HXTUa5Be9WAICXTdIXLRO3TN8T/BeYLT+2BnT/JTCEiYt8I/+/y/zYLPj6++AQAA//8DAOkuZgcqCgAA
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:44:26 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/images/b4ae82e3-51c2-49a3-9071-81f668232ed4
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:44:30 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d7b9bee754cbe478d847d251fd2d035b21594849466; expires=Fri, 14-Aug-20
+        21:44:26 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f608afb30000d2623284e200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36aa2c5c62d262-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA2yQwW7bMBBE7/2MOZMFRdGyzHNQoOemlxQ5rKi1TcQiCZJWohr+90Jx4vbQ62D2YfZd4DJT9TE8UGVYaKWVVEaq/rHpre6s3n1VSj1BwE904O8PsBgMca+5lZvGaWl21Mqd2jayb/Zd1+tW82ggcKJSf6aRKv8fvrXmDg80rY1to5RUG6k2ECicZ84F9hdSfOUs5+KlxrNA8b8ZViuBktj5vXfvPxTYCyi7o6/s6jmvxJRct45xMVTygfO3mCeq6xeUGQKjLy/3LNMrBDiMnkLgUtaaP8hbAIHjkjjPvsT8uKR3/HFJn24+olKje4FATJyp+nD4sZTKEyzIv+EqUOpNB7nq53VCqTH/e09hpDzKEx/ILRCY4+k88SrigiHGSsOJYWs+813crSIH3ne6b2g/jqPUm7Y3Ug6ajBlalsZtB/yVd32+fvkDAAD//wMAg+mPbAACAAA=
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:44:30 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/images/7659226a-a7c0-4b80-80b8-07da597c49de
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:44:46 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d3613848780da7410ef9e1ce94f5cbfab1594849470; expires=Fri, 14-Aug-20
+        21:44:30 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f608c06200009b1872919200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36aa470aa79b18-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA2yQy04jMRBF93zGXdvIbfrpNUJiPcwGxKLariQWabtlO5lpovw7asJrwfbq1tGtc4JNTMXHcEuFYaCVVlJpqauHqjE3jalurpVSjxDwE235/hYGXdsMWrckqbNK1mOvZK/GXqrOUTN0th4cQ2BPufydHRX+Hd6ZeviEB5rWRqeVkqqWqoJA5nTklGGengWyf2UYrQTyzNZvvH2fnWFOoGR3vrAth7RC5tm2NQRsDIV84HQX00QFBiOldZjz+eUrS/QPAhycpxA457Xmt/ISQGC3zJyOPsf0sMzv+N0yf+r4iHKJ9gUCceZExYftnyUXnmBA/j/OArlcDJAt/rhOyCWmn/cUHCUn97wlu0DgGPeHidffTxhjLDTuGaakA3+5ulTkyJtW9xVtnHOy77q6lbKpGlvX4yDbjRvwLe/8fL56AwAA//8DAN8VkNTzAQAA
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:44:46 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/images/1893089d-8660-4f51-a5ba-d42104dcd134
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:44:49 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d5efc5b67cd012069c639b718091ba3a11594849486; expires=Fri, 14-Aug-20
+        21:44:46 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f608ff1100000f46008c8200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36aaab4f7d0f46-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA2yQPU/DMBiEd37GzTZykiYkHhFCYmACFhDDG/tNa7WxI9stClX/Owrla2A9nR7dPUeYyJRd8DeUGRqlKpVUjVTdY6F0XeqiuFRKPUPAjbTmuxtoFG1Xqbazsm0aJVdDXUiqe5J2VRZqZY0tqhUEdpTy02Qp8//wSlfVN9zTuDTuru+dvCql6qRSFQQSxwPHBP3yKpDcO0O3SiBNbNzgzOf0BH0ERbNxmU3exwU0TaZZNpjgMznP8TbEkTI0eooMAevS9ieL9AYB9taR95zSUnNreQ4gsJknjgeXQnycp0/8Zp6+lXxFKQezhUCYOFJ2fv0wp8wjNFw/OpwEUj5rIJPdYdmQcoh/AeQtRSt3vCYzQ+AQdvuRl/NH9CFk6ncMneOef4SdK7LnoSnbggZrrayrrqulrIlVPZhODlS2+LV3ej1dfAAAAP//AwCzOApG+AEAAA==
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:44:49 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/images/00a7ff6c-c010-4067-8c59-c056a8724f52
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:44:51 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=de00aae112bf4ad8bbb1582aab49a04c41594849489; expires=Fri, 14-Aug-20
+        21:44:49 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f6090ab30000d286978a0200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36aabdeafdd286-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA2yQsW7bQBBE+3zG1HfBkiYp8krDMODCVZwmhovlcSkdLPKIu5UCRdC/G7Qip0k7GDzMvDN8EtYQ5wdWgUNJJVlqLHUvBbmqc0X9nYh+wSBMvJWnBzgQ8WYcG289FWQraja29XVnPdUNt5uyGusSBnvO+nMZWOW/8JocNTf4zNPaeLp/DnZTWuos0Z0lKmCQJR0lZbjXN4Mc/ghcSwZ5ER/G4D/nZ7gzOPldUPF6SCtsWXxTwcDHWTnMkh5jmljh0HMSGAwhv39liX/DQOYh8DxLzmstbO01gMHutEg6hhzTy2n5xO9Oy03L3yhr9O8wiIsk1jBvf5yyygSH0E8BF4OsVxXsNRzXDVlj+gfQIGm9fIz7wyTr5TP6GJX7vcBpOsiXqmvF9jI2ZVvwOAyDLaqWOmv7Usb+Ttg2xbAKuDm7vF2+fQAAAP//AwBT8r1Y8gEAAA==
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:44:51 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/images/bea06d9b-baf6-4d5f-8a0a-63b0012fc0c7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:44:53 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d3035c1be355233c4036ce0872801348d1594849491; expires=Fri, 14-Aug-20
+        21:44:51 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f60912e00000d26a8ab25200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36aacb0f88d26a-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA2yQu24bMRRE+3zG1GRw96H1hqVhBHCRKk6TwMUleVcirCUXJKVgI+jfg7ViJ0XaweBg5lzgsnANKT5wFRi01JKmVrf9U9uYbjS77iMRfYdCmHkvjw8wsMI0+E9WW54G3fvdpEcm1kNniZp2cuTuoHDkUr8tnqv8F943hoY3eOR5azzefwn6rtdEmqiBQpF8llxgfjwrlPBLYEZSKIu4MAX3Or3AXMDZHUIVV095Ay2LG3oouBQrhyj5c8oz1208Z4GCD+XlPcv8EwoSfeAYpZStFvb6FkDhsC6Sz6Gk/LQur/jDurwp+ROVmtwLFNIimWuI+69rqTLDINg54KpQ6k0DuxrO24ZSU/4XwNFz9vooe3YrFM7peJplO3+BTamyPQpMzSd5F3araCvT0I4NT9573e866rRueRAiGbVtJo+/9q7P1w+/AQAA//8DABVrmj74AQAA
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:44:53 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/volumes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:44:56 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d83120a4b5db63d02157dcc42de01515f1594849493; expires=Fri, 14-Aug-20
+        21:44:53 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f6091a360000d26a86290200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36aad6bb34d26a-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA6zTTWvbQBAG4Ht/xpw19ezsanelYzGF3N0eWnIY7UcjqthGkm3S4P9e5LiJE+w0kOgkLQN6533Ye9iuus1tGqD+eQ/NajV+P3xDnaUbUnE4kqZ7Ogh9krFdLecyJqiBiQnJIVULpWqiWvFnIvoBBcR2+L24W09TY5t6DQXc9ClDDbN16FabONuq2eEF2+UwyjKkYdakbNkryTFG4631IjrE7ExuFEejZse8M+2CpNBYtKI1GrGMwhIwZCqrkHIVyggFdDKM39ZRxnQxsP4XeCm3h7BpOLagoID19vbqmO5qPtV0XcBwI3161srQ/klQKypgGB/+I1tpu8NMcez4ag41vDH2breEGixRSc56RV55VVXk6fFR9GUO++I/aGO/uWRWIpkFmVpPLZwxm3aO0kfs0i8Jdx+r510pmUPEKohFw77EKtiIzjvXcKOc93xZ7yQ6mxd669Uu9bgdWmR0KeegXMapMK4ajVMzSOdY4XE4O/JofCb0liMa5VyWJlvOCV7B5xP8domb4YX8G1d+Jm+IvPb81ZRP8GTIunfJG2S3UFxrXXN54baqj/UuxVRW+4jkjUIjlcPGWY8maxujjjaKv+x9Ethc9lYYUhmzkH7w9tG85v047MrpJrIiFI4WUwiOY5OciLzH+40rn73pnk+8Sc0t7K/3n/4CAAD//wMApf+nma0FAAA=
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:44:56 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/volumes/37caecb6-6a33-4a62-a2ac-cf059cef9c5d
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:44:56 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=de5f555c219708a1ecbd9586c4301e9ca1594849496; expires=Fri, 14-Aug-20
+        21:44:56 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f609247a0000d276a2aa3200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36aae72e2ad276-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3SOu07FMBBEez5jahutY+IkLlGa9BcKEMXG2ehG5KXY5AoQ/44IAomCqc+ZmXe0y5K4HQW+5zGKQtiE07DMNSeBR0YZaSo0VSdjPJE32TURPUChG+Lz6XX9otIgm4XCyDHdrR0n+Ve3P/rM06FKTPfL+DKJgcK6T80cE89BmjrCPz4pxDNv8udjHN4E3pBCTN87vPMwHozCfrQ1NTxsEVhC67Rja/UNu0xzxkGHnvIqSF+FvIPC5TLDwxHlVLjSUGlKU1VU0m8M3db4uPoEAAD//wMA3rwDfTABAAA=
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:44:56 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/volumes/875af2cd-9ca6-4285-9c6d-7877b2b17882
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:44:56 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d1bb5ed646b1cdf403978e36d13a127ad1594849496; expires=Fri, 14-Aug-20
+        21:44:56 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f60926320000583594990200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36aae9eb375835-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3SPwU7DMBBE73zGnr1o4zq263OF1Hu5gDhs7DVEpEkUu60K4t9RQMCJOT/NzHuHbpoqd4NAqMtJFMRFuPbTuOMqEECTJqQWyRzIhE0TiG6J6AEUpL68Hq7zSpXKY+Il4SDPHK+gYOBS7+fEVf4r0uanaOTjSszTRRY8lx41Osk5Ni4jEZHedhtcfyKBgvl83I/rYJT9rkB4hF84O/JofCb0Vic0jXOZu2x1FnhSUF54kW/XzEMRBaV/Ewia1GrwdbMf8VQEFJyn4XSU/Q4CeNdy1jHhNrJFo32L22gTOu9cp7vGea9BweUyQgBL1JKzhshvvL4zLf3FkHXwcfMJAAD//wMAqCIyDHUBAAA=
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:44:56 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/volumes/5a49638d-0841-4a97-b768-4f36dd3d6da8
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:44:57 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dec8382ebbad4e53e6bd4da09214b60ba1594849497; expires=Fri, 14-Aug-20
+        21:44:57 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f60927db0000d29a6d2ac200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36aaec9fb1d29a-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3SPu04DMRBFez5jag8aP9Z2XG+TPjQgitn1RKyyL62dRID4dxRFIBpufY507id0y1K5GwVS3c6ioN+E67DMLVeBBIYMITk04aBNsjaZ5pGInkFBHsrp8L7eqDrIpkHByKU+rZmr/Kc796PPPN2IdbnKhpcyoMZemnxkskhEZGJ2eKtDAgXrZdrPpfLcy74tkF7gFw6NteiMJmSTPUrfB5M7CcwMrwrKG29yf3jksYiCMnwIJEMKSr1nDjOei4CCyzKeJ9m3kKBht/M2ZqToNDreBeyCj+iO1udss88cQcH1OkMCT9RQ8FFT1FHvoqE/062Hr4dvAAAA//8DAEBz7QlrAQAA
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:44:57 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/pvm-instances
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:44:58 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d66c6bc086bdf4ed6ed31a7080ef9b3f21594849497; expires=Fri, 14-Aug-20
+        21:44:57 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f6092a360000c80ab8111200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36aaf05ee2c80a-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA+xVTW/UMBC98yvQSNziXdtxbMe3SgiBQAWpWw6gajXxB43YfCjObrtU+99R0i4stIWVKC0SvTkzz7E9896bC2hX1as69lhbH8F8vAB0rvMxXn2ddj6AgWlrF83STVdsOi5Iud0zLXyQXDMMzjmhpdSIqXVBiVAw7gSbtqtqB658CJapQIKimggdKNGSOyKYUgGLIHnw09r3Z033OU4PXFXWzzg9vAxAAmULBljOJ0zqCZ1oPcYOLi99PVWh/Z4LaJg0qTeCGeuNQEjg6qhDrDwYGM97+v20ft0O4VCeewcJrHwXy6YGIzbJg9emXRaL0hKW8zmTes54Plec8Jy8f3NwOOc0VT+Xi/F8ouQtBfuWvFayYJAa60wqDafXSrbXNW6v40kCtvPYl039HPsBxCmnhGaEihkVJqVG8Aml9AMk4Mr4+aj84sFwmsCpx0V/CuYCFhj749bt7leEZTPOjBAm0xOpdM4FJBB77JfDw96+hk3yMC0cGlDhJ//qORhwjvNM64KgDo4I5TUpCiYI6tw6FkTOBR+bcl75CowYl23XWDB0kiVQ+arp1mB4AlVZj5jL5RbDs28de5T0o6TvR9JN6zvsy/rT0Tr2AyehXi4WCSTQxNnlRizPIYG2rN81i9KuB0hTD9oYiHuFiafYjX8fYj7GpotbSu/MrVFHewov+m7lu+07mzPfkVUsySCx2NlBICc7JnH08nj29sWLIbne3jvmfEAvR7txv/OsgVR/eaJan7mANCUqS1MiOKMEuZPEW6u4K7xCxD+mmPoVxdQNFEul8dI4NOI+p4YgXM0YHzug7mBq5JTdx9TYp4U/TI2U6SzPgyCptJyIFJHkKBmRHnPthXBFrv/xqfGf0vaOnNFi2+7pjHuS6xZnZHfijDfocnOyefIVAAD//wMAz9TEaH8MAAA=
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:44:58 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/pvm-instances/7effc17f-f708-48f0-862d-4177fabf62fe
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:45:02 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dad48bf137847c6a3be1e661d09bf42db1594849498; expires=Fri, 14-Aug-20
+        21:44:58 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f6092ebe00000e5a06965200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36aaf79bd20e5a-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA+xUTW/cNhC991cUcxa1JEWJFG8GgqBGCyeAnR5aGMaIHK6F6AukduOt4f9eSN5NN0nR7q2H5ka8+eDMe5j3DOh9pJQogf39GR4jBbCwmVw37vxmLzbrg7VDmnFwlDYNhUoagcF7r0xVGcTC+aBVaIT0SmymfX+WrikEJ3RgQXPDlAmcmUp6poTWAZtQyUCbgeZPY/yYNoFM0RA6ppwpmdJYsBqxZAo1kkOHpa4hg3YCC6KWuahMznNjVuzqdZNvQz26v2IBrahsQVYJ68gqhAyO/1+/WeKXjXAsucGewMKV79vhx5tXDDKYD9MCh/aJPGSwp5jacQCrXrJnoKeZ4oDd9XuwUMpcCJ0XJtcVZP81/0VRB2dkzYzTnCnhPTPKCeZQNQVW3DRHrs9IFrJ+nf3vFPgc/EaDYJFb521RWcm/0uDCMb7UYNo1XeuYqOWDqMyDkPWDlkzW7Ndfrm4eJC/0Pwpzn4GLhHM7Dm9wXpIkl5zxknF1x5UtuFUy55z/Bhn4Nn28bf8gsJJn8EjYzY9gn6HDNH+Y/Hm9ZqK8k8IqZcs6L5Q0vIQM0ozzbuHi3c/wkkHb45bW3b2XsjSmYWiCZ0qTYU0jFENTOy+CqqWSK59PPfVg1fqc4ujA8rzMoKd+jAewMoO+3UacsekIbMAu0QINa9kaHU5lsjzjfzGCS6/gIqHuPzf/7jHfPeZ/7jHjRBHndtjeHtK8XCIMu67LIIMx3b0WYvsEGUzt8H7sWndYUsaBFiiO7piTHjGu3ReMUhpjOh3ytO+vj9Ksi16izmJIFPcUT3uOnyiyfWrZ4jUpuuVy789c6/anD3fv3r5djWyMuKXTXDMOHqNnHW3RHZb44bRXquXSbbf6o/93k92P3a6noyEZXWKQzrPaYcWUNCWrXeWZNlo3shHaGAn3Lz/8CQAA//8DABl97cTRCAAA
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:45:02 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/pvm-instances/ce5dfa03-7533-4210-a2d6-ecc72dbe7aaa
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:45:07 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d8dd596b48494a75f05896d02fd39c5461594849502; expires=Fri, 14-Aug-20
+        21:45:02 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f6093e990000589b41114200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36ab10fcbc589b-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA+xTTW/UMBC98zPmHO/6K47jW6UKUYGgUgsHUFVN7ElrkS/Z2W2Xqv8dJd1CD0j0yIGbNfOeNW/mvQfAEBLlTBnctweg+5nSgN3ZOTgo5UaIaqPspqqggNtELTjYTr4bd2G7F9v1weKQZxw85W1DrZFWYBtC0NYYi6h8aCvdNkIGLbbTvn8B91SGFrliVakU01JwhjIYRt5XMjRUIeJ2oPluTN/zVqm69VbWzPqKMy1CYFZ7wTzqRqHhtrEWCogTOBC13AhjN0LWT7PH6eRJ55+aPfrf3RadMo6MC+i0cZJDAccZzk7BwSvHOFI+Yk/gYNo1XfRM1PJaGHstZH1dSSZr9uXDycdrydUyxnyYFmwb7ylAAXtKOY4DOP14VYBPhHMch1OcF5DkkjOumawuhXSKO11tOOdfoYAQ8/eL+IPASV7ALWE334J7gA7z/HkKL/kVE+WlFE6XjpcbZUsjFrl5xnm37OLTe3gsIPZ4Q0/ahS3rutVMGS+ZVoisRiOYIawtaR2a2q77vO+pB6fX55RGD45vygJ66sd0ACcL6ONNwhmbjsC12GVaSsNKW7vDM02WL/a/mPR1F7j6xfpv7H/a2ONECec43Fwc8rycH4Zd1xVQwJgvn4gY76GAKQ7nYxf9YYGMAy2lNPojxuM0rb8vNcp5TPnZPdO+PzueZhX6mussKaC0p/Ssc7yjxPY5MrG0kl9cdfUiKhfvPl9+evt2Tc+Y8IaOc82R0ko5PKvJtZRQwG6NYvh7nvdjt+vp6P0SdW2UDYxbLZjGumJNZSzTrTIhqGACWrh6fPMTAAD//wMAXwiz4dgFAAA=
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:45:07 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/images/dd22588b-a8fd-47e8-bb14-a89cd1f49242
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:45:09 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d309839290d7204073aa57348f2fea75e1594849507; expires=Fri, 14-Aug-20
+        21:45:07 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f60951d200000edeec160200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36ab2fbe940ede-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA2yRQU/rMBCE7/wKNGcbOXkpBJ8REucHl4c4bOxtatHYlr0tL1T97ygtKheuq5lvd2YPcIVJQooPJAyL1rRGm1Y3/bNpbHNrV/2NMeYfFMJEIz89wML7tl31/aCpX3vd3XGvh6HpNPX3zjfr7r7tWihsqcpL9iT8O7y3fy7wSNOiuGuM0WalzQoKlcueS4V9fVOo4ZNhW6NQM7uwDu50doU9gIrbBGEnu7JAcna3HRRcikIhcnlMZSKBxUCFoeBDfb/MCn1AgaMPFCPXusjCqM8DKGzmzGUfairPcz7hN3OGQspcSEIc/85VeIIFhf84KlQ5pyUnYb+sq5IKjfxtr0LRU/F6yyO5GQr7tN1NvOQ8YEhJaNgyrJQdX3p5mnIqwv769ITrswM/rRzfjldfAAAA//8DAOIDXXXMAQAA
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:45:09 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/images/318599f4-36c2-43aa-9a61-6ea98e44db98
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:45:09 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '226'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d94f1dc32fef33d45d6c45724fc7f0ea71594849509; expires=Fri, 14-Aug-20
+        21:45:09 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f609592500009ae2a1b28200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36ab3b6afd9ae2-DFW
+    body:
+      encoding: UTF-8
+      string: '{"description":"an error has occurred; please try again: unable to
+        get image 318599f4-36c2-43aa-9a61-6ea98e44db98: Unable to get Image 318599f4-36c2-43aa-9a61-6ea98e44db98:
+        Resource not found","error":"internal server error"}
+
+'
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:45:09 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/networks
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:45:11 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dd1c69d643a5a988e07876ef7f2cee51a1594849510; expires=Fri, 14-Aug-20
+        21:45:10 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f6095a9b00009b4e13037200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36ab3dca289b4e-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA6yRTWvCUBBF9/0VMusMyfvIe5PshG4KravSTSlh3he1jVFMYhHxvxdbRZAWXLiaWZ07584Oujh8LdefPdSvO3hfxwQ15CvfLseQb0T+s+C86wfufOxzF5ORJDiFEDQZQ8zKh2R1ckIGLfITL1eqSp5kheRtgVqEgKS9QM/aKTYFOSLI4GNcuCXUids+ZtDxIkINq9G1c4+iko0w1AhZNVairPDlcTprZKEsZKfLH+6hhivDhu3qiMdNyx1kcBgHwoG5z27bgCusdtZ5ZKEr1EJKpJgkkqKohJdGJX9uYFiP5wKetpPn2A+T2S/rwvZK8NH2wtSW5taiKZJykT1qTyVqywor5hI1W46ePZe2+u/V07CYd/94Xsn929OYcv+2v/sGAAD//wMAuiBzPeICAAA=
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:45:11 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/networks/339fc829-8c70-41dd-84c1-ca4b3a608b88
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:45:12 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d74d665cd8e8ae458a734426f08df13d41594849511; expires=Fri, 14-Aug-20
+        21:45:11 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f6095f2300000f0a80855200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36ab450f990f0a-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3yPwWrDMBBE7/2MOUuuJTuxpFugl0BbSgu9lGBkSQlqHTlYckIa8u/FTSgh0LCHPezszJsDjLc9FJjkGZuKjHGZVfyeSxDYEN9cv3V9hPqAzH4HC4KVTm6n99dvBQj8ZmZt72J8cqn3JkIdoLfat7ppHVRBkLqkW6gJwRCdheIEQ/Kt/9bJdwGqzI8XNq86rNyYf4AL1ofV/OV8uU4XIIhJ9+mWqMRxQfA5rJsOaqnb6AiCXjsobIam9YYyyWs2FTXjsq445ZK+P86ea54XFQiCS7uu/5o/QKEo5NIILqkwVU5LZi0VpWHU6LIp9DQXjRiZTr5/RDcLTXjGWJUV4v86F5JTmbTfnPHpttUBBOMaCUfm490PAAAA//8DAAgEHq/jAQAA
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:45:12 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/networks/b074b7bc-a149-4122-8ef2-838e31c263fc
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:45:13 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d294ae8e2c44d53fb0345f91bb49cbb841594849512; expires=Fri, 14-Aug-20
+        21:45:12 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f609649200000e4e091cd200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36ab4dbffc0e4e-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA2yOQU+EMBSE7/6KzZwLtoAFejPxsoc1Rr2ZPRR4S6ps2bRlN0j47wbUqImneZN5M/km1KZxUBBlEgtZxDzm1yIDQ2P9E7kzOQ/1ApHkSxQL7BlaHeiixz+tFAzmdNs0jrzfUXCm9lAT9FmbTlcdQYlSSi4ZQh9092MHTw0UZxiC6cy7Dqa3UHz+tfeobUsLxwSyjbHt9uEr+WbIxQrH4IN24b+PlTLDvGd4HY5VDxXcQAxWHwkKu3HzTD5s7ilcevcGBvt5be+gUPE8q/KqjrTIyigTSRIVdEiiIi0oFXUi00MNhjCelq1zpy3YKks7v5Hz1QcAAAD//wMAOiOc+WkBAAA=
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:45:13 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/networks/fe83beac-4c85-47a3-9aa5-4a7aecaca579
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:45:14 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dc783b65695dcb06bb9276f77716aa36b1594849514; expires=Fri, 14-Aug-20
+        21:45:14 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f6096a0900000e4a97010200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36ab567e8b0e4a-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3ROu07DMBTd+Qp0ZifEaZ7eKrF0ACEYUYfb+DZySZzKdlKVKP+OAgx0YDpHOs8ZjdEOCrJOY1lUcRInD2kOAW39G7uJnYd6h0zLVYol9gItBb7Q9SYlIWDOW60de//EwZnGQ82giUxHh46hZJoJhCFQt/JcYPSsoaTAGExnPimYwUIly5+mV7Itrw9msNXGtruXX+V2PS0g4AO58K8nxbIXOI39YYA6UudZwFLPUNjq3tj7Zw6XwX1AwP6w3SMUjlxtDkxNlDVVHmUlbaKaKI8yKokbaigvawiE63ltmjqyEN+wposiX+6+AAAA//8DAAVks6FkAQAA
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:45:14 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/networks/339fc829-8c70-41dd-84c1-ca4b3a608b88/ports
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:45:15 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d89b82d933daecca9f6c42555cf30bff11594849514; expires=Fri, 14-Aug-20
+        21:45:14 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f6096d9e00000ed2dcb77200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36ab5c3d870ed2-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA8yRO6sbQQyF+/wM1SvvvHZmdrpL7i3chzQhhUYaEZPYXnb3OoXxfw82gTwwwUUC6QTS4Ryd7wzTcV4XKB/OIG3heTetu+MBCkAHn+amUKCf+MvxVfqT7W8D7g7LSgduS1+bRpctqYiEHGMm8iyaglbrJNj+0Navx/nz0ns/Kmc3YuZkMFgRzIEtMoXqKZpcc+5vWXoeLYmxjM43gyEahzWaAbNmdsPYsh0MdLCbnkTmtixQwI5uY2PeWDduUoQO9sQ/tkrFaiFTWIqPxV3VV6vtMxR40G067bff34Zy/hvVTKf9T+epqbJNippMxpDVYI5OMNiUlKpGp+3XGLf0D8kuHSwrra/XLp7evtu+f4FL9//wdq2KZWJsqVUMtSrm1ATJ1yG6ZIPEP/JOd3j7WFosQiX8zvtBt3/Nm9sgSsZjGrzH4KxBchKxMScntSUiusP7Idk93h8vb74BAAD//wMA82Acw+wDAAA=
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:45:15 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/networks/b074b7bc-a149-4122-8ef2-838e31c263fc/ports
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:45:16 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '13'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d2a7400107208de6017a84489c2bc173a1594849515; expires=Fri, 14-Aug-20
+        21:45:15 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f6096f840000eca28fa70200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36ab5f3887eca2-DFW
+    body:
+      encoding: UTF-8
+      string: '{"ports":[]}
+
+'
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:45:16 GMT
+- request:
+    method: get
+    uri: https://us-south.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/473f85b4-c4ba-4425-b495-d26c77365c91/networks/fe83beac-4c85-47a3-9aa5-4a7aecaca579/ports
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.8p224
+      Authorization:
+      - Bearer eyJraWQiOiIyMDIwMDYyNDE4MzAiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwiaWQiOiJJQk1pZC0yNzAwMDYzWVZOIiwicmVhbG1pZCI6IklCTWlkIiwiaWRlbnRpZmllciI6IjI3MDAwNjNZVk4iLCJnaXZlbl9uYW1lIjoiSkFZIiwiZmFtaWx5X25hbWUiOiJDYXJtYW4iLCJuYW1lIjoiSkFZIENhcm1hbiIsImVtYWlsIjoiandjYXJtYW5AdXMuaWJtLmNvbSIsInN1YiI6Imp3Y2FybWFuQHVzLmlibS5jb20iLCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiIxZmRmNWVmZmMzZjk0NTY4OGMwMjFjZDBhOGI0NWM0ZCIsImltc191c2VyX2lkIjoiNzc3MTQyMCIsImltcyI6IjE4MzAxMDkifSwiaWF0IjoxNTk0ODQ5NDU5LCJleHAiOjE1OTQ4NTMwNTksImlzcyI6Imh0dHBzOi8vaWFtLmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.TPYBQeIHR2gSYe72CdIo8isR_xzFI7H3XR3Non9uTVBildwToKUrPfUiygrAFFm7w3xXPFN-oQTaOytyUpy8zrX2u864ULG8TAphm82tH9iuuxupI3pgw4gFpPZoMh3IQ5XhMTDq8IIwpu9UrLhq2C0YAjMQgd5ZgLpciakV8gfC6BqEJrKHbOrQ3X4MRrfvDurFDBbIlSp5S7xl-wnNRRPtw97IOmb-9aRr9wva6YmQ7fYZz2qrBj0_1JMt0uomr2jvcBjLpJ3VFRWjjZIyGHa2UsacHS_BZeMSU93Jx4_DmXiXL1DXp6M205WI-FmhbLeQ-2oMa7HguS6jVnffxQ
+      Crn:
+      - 'crn:v1:bluemix:public:power-iaas:us-south:a/1fdf5effc3f945688c021cd0a8b45c4d:473f85b4-c4ba-4425-b495-d26c77365c91::'
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 15 Jul 2020 21:45:16 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=de81c2bdf9c35604af549783fd04a84b41594849516; expires=Fri, 14-Aug-20
+        21:45:16 GMT; path=/; domain=.power-iaas.cloud.ibm.com; HttpOnly; SameSite=Lax
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 03f60973a000009b4e179f9200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5b36ab65cfce9b4e-DFW
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA6yQMU/DMBCFd37GzXEdJ4598VYBQ3bEghgu9p0aQZMoTstQ9b8jIiRg68B20run9713gXla1gzh5QKJc1yGeR2mEQJAAYeFBQLoOb5Pp6TPRm+HGsa80hg5657FVWhIUkoWnUOiOibxVnpTJWv0yOvHtLxlLYx1zxSVjdgo66lWLVGjLHniSJEa3+qNRTM6wj6xSr5CZWtyqo8oyrnWi6SWPJVQwDDvU1o4Zwhg2mpnHO7KHSIUcKT4owkF40LNwZoQOViCYivdPUCAG7Pm87H7Lg3h8h/DzOfjr3fPItF4UeJLVBalVOiqpKzxXqgXVwn/xdjob7JdC8grraevLfb3T93zI1xfr3efAAAA//8DAGvDh6f6AQAA
+    http_version: null
+  recorded_at: Wed, 15 Jul 2020 21:45:16 GMT
+recorded_with: VCR 5.1.0
