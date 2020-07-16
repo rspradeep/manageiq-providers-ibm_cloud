@@ -23,6 +23,12 @@ describe ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::Refresher do
     end
 
     def assert_table_counts
+      expect(Vm.count).to eq(2)
+      expect(MiqTemplate.count).to eq(5)
+      # TODO: these are duplicated every refresh expect(CloudVolume.count).to eq(3)
+      expect(CloudNetwork.count).to eq(3)
+      expect(CloudSubnet.count).to eq(3)
+      expect(NetworkPort.count).to eq(3)
     end
 
     def full_refresh(ems)
