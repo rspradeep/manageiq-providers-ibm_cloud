@@ -18,8 +18,6 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
       case options[:target]
       when 'cloud'
         creds[:tenant_id] = self.class.raw_tenant_id(creds)
-        _log.info("Printing all the values of creds")
-        _log.info(creds)
         api = ManageIQ::Providers::IbmCloudVirtualServers::CloudControlAPI.new(creds)
       when 'network'
         api = ManageIQ::Providers::IbmCloudVirtualServers::NetControlAPI.new(creds)
@@ -98,7 +96,6 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
 
     def raw_tenant_id(creds)
       plst = get_pvstenantid(creds[:token])
-      _log.info("The tenant id=[%s]"%[plst[0][:tenant_id]])
       plst[0][:tenant_id]
     end
 
