@@ -191,9 +191,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
 
     sshkeys do |tenant_key|
       # save the tenant instance
-      _log.info("KULDIP: This is okay till here")
       persister.key_pairs.build(:name => tenant_key[:name])
-
     end
   end
 end
