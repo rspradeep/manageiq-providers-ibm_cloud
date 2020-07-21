@@ -4,6 +4,8 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager < ManageIQ::Prov
   require_nested :MetricsCollectorWorker
   require_nested :Refresher
   require_nested :RefreshWorker
+  require_nested :Provision
+  require_nested :ProvisionWorkflow
   require_nested :Template
   require_nested :Vm
 
@@ -17,6 +19,8 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager < ManageIQ::Prov
 
   before_create :ensure_managers
   before_create :ensure_managers_zone
+
+  supports :provisioning
 
   def ensure_managers
     ensure_managers_zone
@@ -51,4 +55,9 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager < ManageIQ::Prov
   def self.description
     @description ||= "IBM Power Systems Virtual Server".freeze
   end
+
+  def start_clone(clone_options)
+    _log.info(clone_options.inspect)
+  end
+
 end

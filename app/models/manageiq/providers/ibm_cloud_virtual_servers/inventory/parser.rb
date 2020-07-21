@@ -27,13 +27,13 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
           :memory_mb       => Integer(instance['memory']) * 1024,
         }
 
-      vol_ids  = instance['volumeIDs']
+      vol_ids   = instance['volumeIDs']
 
-      img_id   = instance['imageID']
+      img_id    = instance['imageID']
 
-      pub_nets = instance['networks'].reject {|net| net['externalIP'].blank?}
+      ext_ports = instance['networks'].reject {|net| net['externalIP'].blank?}
 
-      yield vmi, hardw, vol_ids, img_id, pub_nets
+      yield vmi, hardw, vol_ids, img_id, ext_ports
     end
   end
 
@@ -102,18 +102,19 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
   end
 
   def parse
-    img_to_os = {}
+    img_to_os            = {}
+    subnet_to_ext_ports  = {}
 
     images do |image, os|
       img_to_os[image[:ems_ref]] = os
       persister.miq_templates.build(image)
     end
 
-    volumes do  |volume|
+    volumes do |volume|
       ps_vol = persister.cloud_volumes.build(volume)
     end
 
-    instances do |vmi, hardw, vol_ids, img_id, pub_ports|
+    instances do |vmi, hardw, vol_ids, img_id, ext_ports|
       # saving general VMI information
       ps_vmi = persister.vms.build(vmi)
 
@@ -134,6 +135,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
             :backing         => persister.cloud_volumes.find(vol_id),
             :location        => vol_id,
             :size            => 20)
+
       end
 
       # saving OS information
@@ -141,31 +143,38 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
       os ||= pub_img_os(img_id)
       system = {:vm_or_template => ps_vmi, :product_name => os}
       persister.operating_systems.build(system)
+
+      # saving exteral network ports
+      ext_ports.each do |ext_port|
+        net_id = ext_port['networkID']
+        subnet_to_ext_ports[net_id] ||= []
+        subnet_to_ext_ports[net_id]  << ext_port
+      end
     end
 
     collector.networks.each do |network|
       persister_cloud_networks = persister.cloud_networks.build(
-        :ems_ref             => network['networkID'],
-        :name                => network['name'],
+        :ems_ref             => "#{network['networkID']}-#{network['type']}",
+        :name                => "#{network['name']}-#{network['type']}",
         :cidr                => '',
         :enabled             => true,
         :orchestration_stack => '',
         :status              => 'active'
       )
 
-      subnet_id = "#{network['networkID']}-#{network['type']}"
-
       persister_cloud_subnet = persister.cloud_subnets.build(
         :cloud_network    => persister_cloud_networks,
         :cidr             => network['cidr'],
-        :ems_ref          => subnet_id,
+        :ems_ref          => network['networkID'],
         :gateway          => network['gateway'],
-        :name             => "#{network['name']}-#{network['type']}",
+        :name             => network['name'],
         :status           => "active",
         :dns_nameservers  => network['dnsServers'],
         :ip_version       => '4',
         :network_protocol => 'IPv4'
       )
+      
+      mac_to_port = {}
 
       collector.ports(network['networkID']).each do |port|
         vmi_id = port['pvmInstance']['pvmInstanceID']
@@ -177,13 +186,25 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
           :mac_address => port['macAddress'],
           :device_ref  => vmi_id,
           :device      => persister.vms.lazy_find(vmi_id)
-          #:security_groups => '',
-          #:source          => '',
         )
+
+        mac_to_port[port['macAddress']] = persister_network_port
 
         persister.cloud_subnet_network_ports.build(
           :network_port => persister_network_port,
           :address      => port['ipAddress'],
+          :cloud_subnet => persister_cloud_subnet
+        )
+      end
+
+      ext_ports = subnet_to_ext_ports[network['networkID']]
+
+      (ext_ports || []).each do |port|
+        port_ps = mac_to_port[port['macAddress']]
+
+        persister.cloud_subnet_network_ports.build(
+          :network_port => port_ps,
+          :address      => port['externalIP'],
           :cloud_subnet => persister_cloud_subnet
         )
       end
