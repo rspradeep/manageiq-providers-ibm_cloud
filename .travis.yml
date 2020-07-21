@@ -1,5 +1,5 @@
 ---
-dist: trusty
+dist: xenial
 language: ruby
 rvm:
 - 2.5.7
@@ -13,14 +13,10 @@ env:
   - RUBY_GC_HEAP_GROWTH_FACTOR=1.25
 services:
   - postgresql
-before_install:
-- wget http://launchpadlibrarian.net/395223631/libcurl4-openssl-dev_7.47.0-1ubuntu2.11_amd64.deb -P /tmp && sudo dpkg -i /tmp/libcurl4-openssl-dev_7.47.0-1ubuntu2.11_amd64.deb; sudo apt-get -f install
 addons:
   postgresql: "10"
   apt:
     update: true
-  packages:
-  - postgresql-10
-  - postgresql-client-10
-  - libcurl4-gnutls-dev
+    packages:
+    - libcurl4-gnutls-dev
 install: bin/setup
