@@ -1,5 +1,15 @@
 class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::ProvisionWorkflow < ::MiqProvisionCloudWorkflow
+
+  SYSPREP_TIMEZONES = {
+    '003' => '(UTC-10:00) Hawaiian Standard Time',
+    '004' => '(UTC-09:00) Alaskan Standard Time',
+    '005' => '(UTC-08:00) Pacific Standard Time',
+    '006' => '(UTC-07:00) US Mountain Standard Time',
+    '057' => '(UTC+04:00) Azerbaijan Standard Time',
+  }.freeze
+
   def get_timezones(_options = {})
+    SYSPREP_TIMEZONES
   end
 
   def self.default_dialog_file
@@ -35,7 +45,8 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::ProvisionWorkfl
   end
 
   def allowed_number_of_vms(_options = {})
-    []
+    a = *(1..10)
+    Hash[a.zip(a.map(&:to_s))]
   end
 
   def allowed_templates(_options = {})

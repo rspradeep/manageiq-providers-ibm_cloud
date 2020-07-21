@@ -1,5 +1,3 @@
-require 'byebug'
-
 class ManageIQ::Providers::IbmCloudVirtualServers::NetControlAPI
   require 'rest-client'
   require 'json'

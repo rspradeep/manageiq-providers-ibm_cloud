@@ -187,12 +187,9 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
       end
 
       ext_ports = subnet_to_ext_ports[network['networkID']]
-      byebug
 
-      # TODO: here pub-vlan
       (ext_ports || []).each do |port|
         port_ps = mac_to_port[port['macAddress']]
-        byebug
 
         persister.cloud_subnet_network_ports.build(
           :network_port => port_ps,

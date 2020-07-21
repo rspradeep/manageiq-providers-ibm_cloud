@@ -1,5 +1,3 @@
-require 'byebug'
-
 class ManageIQ::Providers::IbmCloudVirtualServers::NetworkManager::CloudSubnet < ::CloudSubnet
     supports :create
 
@@ -29,8 +27,6 @@ class ManageIQ::Providers::IbmCloudVirtualServers::NetworkManager::CloudSubnet <
     end
 
     def raw_delete_cloud_subnet
-        byebug
-
         begin
             ext_management_system.with_provider_connection({:target => 'network'}) do |net_control|
                 net_control.del_subnet(ems_ref)
