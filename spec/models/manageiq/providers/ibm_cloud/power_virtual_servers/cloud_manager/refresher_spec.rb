@@ -78,7 +78,7 @@ describe ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::Refre
         :power_state      => "on",
         :raw_power_state  => "on",
         :connection_state => "connected",
-        :type             => "ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::Vm"
+        :type             => "ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::Vm"
       )
 
       expect(vm.hardware).to have_attributes(
@@ -115,7 +115,7 @@ describe ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::Refre
         :power_state      => "never",
         :raw_power_state  => "never",
         :connection_state => "connected",
-        :type             => "ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::Template"
+        :type             => "ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::Template"
       )
     end
 
@@ -123,7 +123,7 @@ describe ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::Refre
       key_pair = ems.key_pairs.find_by(:name => "beta")
       expect(key_pair).to have_attributes(
         :name => "beta",
-        :type => "ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::AuthKeyPair"
+        :type => "ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::AuthKeyPair"
       )
     end
 
@@ -135,7 +135,7 @@ describe ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::Refre
         :cidr    => "",
         :status  => "active",
         :enabled => true,
-        :type    => "ManageIQ::Providers::IbmCloudVirtualServers::NetworkManager::CloudNetwork"
+        :type    => "ManageIQ::Providers::IbmCloud::PowerVirtualServers::NetworkManager::CloudNetwork"
       )
     end
 
@@ -150,7 +150,7 @@ describe ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::Refre
         :network_protocol => "IPv4",
         :dns_nameservers  => ["9.9.9.9"],
         :extra_attributes => {:ip_version=>"4"},
-        :type             => "ManageIQ::Providers::IbmCloudVirtualServers::NetworkManager::CloudSubnet"
+        :type             => "ManageIQ::Providers::IbmCloud::PowerVirtualServers::NetworkManager::CloudSubnet"
       )
     end
 
