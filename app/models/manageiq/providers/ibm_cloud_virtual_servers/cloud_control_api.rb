@@ -47,4 +47,16 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudControlAPI
     )
     JSON.parse(response.body)
   end
+
+  def del_image(image_id)
+    response = RestClient.delete(
+      "https://#{@creds[:region]}.power-iaas.cloud.ibm.com" \
+      "/pcloud/v1/cloud-instances/#{@creds[:guid]}/images/#{image_id}",
+      'Authorization' => @creds[:token].get,
+      'CRN'           => @creds[:crn],
+      'Content-Type'  => 'application/json'
+    )
+
+    JSON.parse(response.body)
+  end
 end
