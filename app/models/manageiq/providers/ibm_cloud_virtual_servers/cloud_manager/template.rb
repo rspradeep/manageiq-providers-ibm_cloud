@@ -12,6 +12,10 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::Template < Mana
     connection.images[ems_ref]
   end
 
+  def destroy
+    delete_image
+  end
+
   def delete_image_queue(userid)
     task_opts = {
       :action => "Deleting Cloud Image for user #{userid}",
