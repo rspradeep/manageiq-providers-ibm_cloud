@@ -3,7 +3,6 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister < Manage
   require_nested :NetworkManager
   require_nested :StorageManager
 
-
   def initialize_inventory_collections
     initialize_cloud_inventory_collections
     initialize_network_inventory_collections
@@ -16,6 +15,8 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister < Manage
     %i[availability_zones vms hardwares disks operating_systems networks cloud_volumes].each do |name|
       add_cloud_collection(name)
     end
+
+    add_key_pairs
 
     add_cloud_collection(:miq_templates) do |builder|
       builder.add_properties(:model_class => ::ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::Template)
@@ -31,6 +32,12 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister < Manage
   def initialize_storage_inventory_collections
     %i[cloud_volumes].each do |name|
       add_storage_collection(name)
+    end
+  end
+
+  def add_key_pairs(extra_properties = {})
+    add_collection(cloud, :key_pairs, extra_properties) do |b|
+      b.add_properties(:model_class => ::ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::AuthKeyPair)
     end
   end
 

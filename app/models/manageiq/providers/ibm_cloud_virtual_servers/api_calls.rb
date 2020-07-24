@@ -152,9 +152,10 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
 
     images = []
     JSON.parse(response.body)['images'].each do |image|
-      images << get_image(
-        token, guid, crn, region, image['imageID']
-      )
+      image = get_image(token, guid, crn, region, image['imageID'])
+      if image
+        images << image
+      end
     end
     images
   end
@@ -186,6 +187,52 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
     res
   end
 
+  # Get list of all power virtual server tenants
+  #
+  # @param token [IAMtoken] the IBM Cloud IAM Token object
+  # @return Array[Strings] where each string is the account_id
+  #
+  def get_pvstenantid(token)
+    response = RestClient.get(
+      "https://resource-controller.cloud.ibm.com/v2/resource_instances",
+      'Authorization' => token.get,
+    )
+
+    plst = []
+    JSON.parse(response.body)['resources'].each do |resource|
+      if resource['crn'].include? "power-iaas"
+        plst << { :region => resource['region_id'],
+                  :name => resource['name'],
+                  :tenant_id => resource['account_id'],
+                  :crn =>resource['crn']
+                }
+      end
+    end
+    plst
+  end
+
+  # From tenant's current state or informationa get list of ssh_keys
+  #
+  # @param token [IAMtoken] the IBM Cloud IAM Token object
+  # @param tenant [:region, :tenant_id, :crn]
+  # @return [Array<Hash>] all ssh keys for this instance
+  def get_sshkeys(token, tenant)
+    response = RestClient.get(
+      "https://#{tenant[:region]}.power-iaas.cloud.ibm.com/pcloud/v1/tenants/#{tenant[:tenant_id]}",
+      'Authorization' => token.get,
+      'crn' => tenant[:crn]
+    )
+    sshkeys = JSON.parse(response.body)['sshKeys']
+    sshkeys
+  end
+
+  # list all the volumes.
+  #
+  # @param token [IAMtoken] the IBM Cloud IAM Token object
+  # @param guid [String] the IBM Power Cloud instance GUID
+  # @param crn [String] the IBM Power Cloud instance CRN
+  # @param region [String] the IBM Power Cloud instance region
+  # @return [Array<Hash>] all volumes for this instance
   def get_volumes(token, guid, crn, region)
     response = RestClient.get(
       "https://#{region}.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/#{guid}/volumes",

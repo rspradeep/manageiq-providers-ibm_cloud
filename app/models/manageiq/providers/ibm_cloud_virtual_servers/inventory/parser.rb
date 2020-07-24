@@ -89,6 +89,16 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
     end
   end
 
+  def sshkeys
+    collector.sshkeys.each do |tkey|
+      tenant_key = {
+        :creationDate => tkey['creationDate'],
+        :name         => tkey['name'],
+        :sshKey       => tkey['sshKey'],
+      }
+      yield tenant_key
+    end
+  end
 
   def parse
     img_to_os            = {}
@@ -197,6 +207,11 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
           :cloud_subnet => persister_cloud_subnet
         )
       end
+    end
+
+    sshkeys do |tenant_key|
+      # save the tenant instance
+      persister.key_pairs.build(:name => tenant_key[:name])
     end
   end
 end

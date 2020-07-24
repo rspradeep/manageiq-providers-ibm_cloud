@@ -12,12 +12,13 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
   def connect(options = {})
     auth_key = authentication_key(options[:auth_type])
     creds = self.class.raw_connect(auth_key, uid_ems)
-    api = nil
+    api = creds
 
     begin
       case options[:target]
       when 'cloud'
-        api = creds # TODO: later return cloud_api instead
+        creds[:tenant_id] = self.class.raw_tenant_id(creds)
+        api = ManageIQ::Providers::IbmCloudVirtualServers::CloudControlAPI.new(creds)
       when 'network'
         api = ManageIQ::Providers::IbmCloudVirtualServers::NetControlAPI.new(creds)
       when 'storage'
@@ -89,7 +90,13 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
 
       token = IAMtoken.new(api_key)
       crn, region = get_service_crn_region(token, pcloud_guid)
+
       {:token => token, :guid => pcloud_guid, :crn => crn, :region => region}
+    end
+
+    def raw_tenant_id(creds)
+      plst = get_pvstenantid(creds[:token])
+      plst[0][:tenant_id]
     end
 
     def api_rescue_block

@@ -1,4 +1,5 @@
 class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager < ManageIQ::Providers::CloudManager
+  require_nested :AuthKeyPair
   require_nested :MetricsCapture
   require_nested :MetricsCollectorWorker
   require_nested :Refresher
