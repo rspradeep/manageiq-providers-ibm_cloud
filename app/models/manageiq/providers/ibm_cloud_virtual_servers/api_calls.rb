@@ -226,7 +226,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
     sshkeys
   end
 
-  # Get an IBM Power Cloud image
+  # list all the volumes.
   #
   # @param token [IAMtoken] the IBM Cloud IAM Token object
   # @param guid [String] the IBM Power Cloud instance GUID
