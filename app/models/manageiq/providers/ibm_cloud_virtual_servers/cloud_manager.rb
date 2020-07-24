@@ -54,9 +54,4 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager < ManageIQ::Prov
   def self.description
     @description ||= "IBM Power Systems Virtual Server".freeze
   end
-
-  def start_clone(clone_options)
-    _log.info(clone_options.inspect)
-  end
-
 end
