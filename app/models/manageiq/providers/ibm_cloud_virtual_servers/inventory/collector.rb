@@ -103,7 +103,6 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector < Manage
       @connection[:token],
     )
 
-    sshlst = []
     # since all the tenants are same,we can use the first tenant and get the list of
     # ssh keys
     tenant_sshkeys = get_sshkeys(@connection[:token], plst[0])
