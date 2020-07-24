@@ -1,5 +1,4 @@
 class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector < ManageIQ::Providers::Inventory::Collector
-  require "byebug"
   require_nested :CloudManager
   require_nested :NetworkManager
   require_nested :StorageManager
@@ -101,15 +100,13 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector < Manage
   def sshkeys
     connection
     plst = get_pvstenantid(
-	     @connection[:token],
-	   )
-   
+      @connection[:token],
+    )
+
     sshlst = []
     # since all the tenants are same,we can use the first tenant and get the list of
     # ssh keys
-    tenant_sshkeys = get_sshkeys(
-                         @connection[:token],
-  	                 plst[0])
+    tenant_sshkeys = get_sshkeys(@connection[:token], plst[0])
     tenant_sshkeys
   end
 end

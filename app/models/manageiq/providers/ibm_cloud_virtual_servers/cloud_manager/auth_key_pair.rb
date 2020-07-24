@@ -1,5 +1,3 @@
-require "byebug"
-
 class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::AuthKeyPair < ManageIQ::Providers::CloudManager::AuthKeyPair
   IbmCvsKeyPair = Struct.new(:name, :key_name, :fingerprint, :private_key)
 

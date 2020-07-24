@@ -144,7 +144,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
   def get_images(token, guid, crn, region)
     response = RestClient.get(
       "https://#{region}.power-iaas.cloud.ibm.com" \
-      "/pcloud/v1/images",
+      "/pcloud/v1/cloud-instances/#{guid}/images",
       'Authorization' => token.get,
       'CRN'           => crn,
       'Content-Type'  => 'application/json'
@@ -173,7 +173,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
     begin
       response = RestClient.get(
         "https://#{region}.power-iaas.cloud.ibm.com" \
-        "/pcloud/v1/cloud-instances/images/#{img_id}",
+        "/pcloud/v1/cloud-instances/#{guid}/images/#{img_id}",
         'Authorization' => token.get,
         'CRN'           => crn,
         'Content-Type'  => 'application/json'
@@ -187,31 +187,31 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
     res
   end
 
-  # Get all ssh_keys in an IBM Power Cloud instance
+  # Get list of all power virtual server tenants
   #
   # @param token [IAMtoken] the IBM Cloud IAM Token object
   # @return Array[Strings] where each string is the account_id
   #
   def get_pvstenantid(token)
     response = RestClient.get(
-    "https://resource-controller.cloud.ibm.com/v2/resource_instances",
-    'Authorization' => token.get,
+      "https://resource-controller.cloud.ibm.com/v2/resource_instances",
+      'Authorization' => token.get,
     )
-  
+
     plst = []
     JSON.parse(response.body)['resources'].each do |resource|
       if resource['crn'].include? "power-iaas"
-        plst << { :region => resource['region_id'], 
-                  :name => resource['name'], 
-                  :tenant_id => resource['account_id'], 
-                  :crn =>resource['crn'] 
+        plst << { :region => resource['region_id'],
+                  :name => resource['name'],
+                  :tenant_id => resource['account_id'],
+                  :crn =>resource['crn']
                 }
       end
     end
     plst
   end
 
-  # Get all ssh_keys in an IBM Power Cloud instance
+  # From tenant's current state or informationa get list of ssh_keys
   #
   # @param token [IAMtoken] the IBM Cloud IAM Token object
   # @param tenant [:region, :tenant_id, :crn]

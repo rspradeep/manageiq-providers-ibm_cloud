@@ -28,7 +28,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
       when nil, {}
         api = creds
       else
-        raise ArgumentError, "GETTING A CONNECT ERROR &&&& Unknown target API set: '#{options[:target]}''"
+        raise ArgumentError, "Unknown target API set: '#{options[:target]}''"
       end
     end
 
@@ -90,7 +90,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
 
       token = IAMtoken.new(api_key)
       crn, region = get_service_crn_region(token, pcloud_guid)
-      
+
       {:token => token, :guid => pcloud_guid, :crn => crn, :region => region}
     end
 
@@ -98,7 +98,6 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
       plst = get_pvstenantid(creds[:token])
       plst[0][:tenant_id]
     end
-
 
     def api_rescue_block
       _log.info("rescue")
