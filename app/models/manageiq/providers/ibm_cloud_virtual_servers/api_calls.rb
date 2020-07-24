@@ -230,6 +230,9 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
   #
   # @param token [IAMtoken] the IBM Cloud IAM Token object
   # @param guid [String] the IBM Power Cloud instance GUID
+  # @param crn [String] the IBM Power Cloud instance CRN
+  # @param region [String] the IBM Power Cloud instance region
+  # @return [Array<Hash>] all volumes for this instance
   def get_volumes(token, guid, crn, region)
     response = RestClient.get(
       "https://#{region}.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/#{guid}/volumes",
