@@ -49,11 +49,11 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager < ManageIQ::Prov
   end
 
   def self.ems_type
-    @ems_type ||= "ibm_cloud_virtual_servers".freeze
+    @ems_type ||= IC_SERVICE_DESC_NOSPACES.freeze
   end
 
   def self.description
-    @description ||= "IBM Power Systems Virtual Server".freeze
+    @description ||= IC_SERVICE_DESC.freeze
   end
 
   def start_clone(clone_options)

@@ -2,6 +2,8 @@ module ManageIQ::Providers::IbmCloudVirtualServers::NetAPICalls
   require 'rest-client'
   require 'json'
 
+  include ManageIQ::Providers::IbmCloudVirtualServers::Config
+
   class IAMtoken
     # Generic IBM Cloud IAM Token Class
     # @param api_key [String] the IBM Cloud API key
@@ -23,7 +25,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::NetAPICalls
     # Update access token. Token is valid for one hour.
     def update_token
       response = RestClient.post(
-        "https://iam.cloud.ibm.com/identity/token",
+        IC_IAM_ENDPOINT + "/identity/token",
         {'grant_type' => 'urn:ibm:params:oauth:grant-type:apikey',
          'apikey'     => @api_key},
         {'Content-Type' => 'application/x-www-form-urlencoded',
@@ -39,8 +41,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::NetAPICalls
   # @return [Array<String>] the associated crn, region
   def get_service_crn_region(token, guid)
     response = RestClient.get(
-      "https://resource-controller.cloud.ibm.com" \
-      "/v2/resource_instances",
+      IC_RESOURCE_CONT_ENDPOINT + "/v2/resource_instances",
       'Authorization' => token.get
     )
     resource_list = JSON.parse(response.body)['resources']
@@ -58,7 +59,8 @@ module ManageIQ::Providers::IbmCloudVirtualServers::NetAPICalls
   # @return [Array<Hash>] all networks for this IBM Power Cloud instance
   def get_ports(token, guid, crn, region, network_id)
     response = RestClient.get(
-      "https://#{region}.power-iaas.cloud.ibm.com" + "/pcloud/v1/cloud-instances/#{guid}/networks/#{network_id}/ports",
+      IC_POWERVS_ENDPOINT.gsub("{region}", region) +
+      "/pcloud/v1/cloud-instances/#{guid}/networks/#{network_id}/ports",
       'Authorization' => token.get,
       'CRN'           => crn,
       'Content-Type'  => 'application/json'
@@ -76,7 +78,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::NetAPICalls
   # @return [Array<Hash>] all networks for this IBM Power Cloud instance
   def get_networks(token, guid, crn, region)
     response = RestClient.get(
-      "https://#{region}.power-iaas.cloud.ibm.com" \
+      IC_POWERVS_ENDPOINT.gsub("{region}", region) +
       "/pcloud/v1/cloud-instances/#{guid}/networks",
       'Authorization' => token.get,
       'CRN'           => crn,
@@ -101,7 +103,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::NetAPICalls
   # @return [Hash] Network
   def get_network(token, guid, crn, region, network_id)
     response = RestClient.get(
-      "https://#{region}.power-iaas.cloud.ibm.com" \
+      IC_POWERVS_ENDPOINT.gsub("{region}", region) +
       "/pcloud/v1/cloud-instances/#{guid}/networks/#{network_id}",
       'Authorization' => token.get,
       'CRN'           => crn,

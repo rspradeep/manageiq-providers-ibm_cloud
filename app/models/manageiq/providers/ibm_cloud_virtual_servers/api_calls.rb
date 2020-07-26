@@ -2,7 +2,11 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
   require 'rest-client'
   require 'json'
 
+  include ManageIQ::Providers::IbmCloudVirtualServers::Config
+
   class IAMtoken
+    include ManageIQ::Providers::IbmCloudVirtualServers::Config
+
     # Generic IBM Cloud IAM Token Class
     # @param api_key [String] the IBM Cloud API key
     def initialize(api_key)
@@ -23,7 +27,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
     # Update access token. Token is valid for one hour.
     def update_token
       response = RestClient.post(
-        "https://iam.cloud.ibm.com/identity/token",
+        IC_IAM_ENDPOINT + "/identity/token",
         {'grant_type' => 'urn:ibm:params:oauth:grant-type:apikey',
          'apikey'     => @api_key},
         {'Content-Type' => 'application/x-www-form-urlencoded',
@@ -39,8 +43,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
   # @return [Array<String>] the associated crn, region
   def get_service_crn_region(token, guid)
     response = RestClient.get(
-      "https://resource-controller.cloud.ibm.com" \
-      "/v2/resource_instances",
+      IC_RESOURCE_CONT_ENDPOINT + "/v2/resource_instances",
       'Authorization' => token.get
     )
     resource_list = JSON.parse(response.body)['resources']
@@ -57,7 +60,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
   # @return [Array<Hash>] all PVM Instances for this instance
   def get_pcloudpvminstances(token, guid, crn, region)
     response = RestClient.get(
-      "https://#{region}.power-iaas.cloud.ibm.com" \
+      IC_POWERVS_ENDPOINT.gsub("{region}", region) +
       "/pcloud/v1/cloud-instances/#{guid}/pvm-instances",
       'Authorization' => token.get,
       'CRN'           => crn,
@@ -82,7 +85,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
   # @return [Hash] PVM Instances
   def get_pcloudpvminstance(token, guid, crn, region, pvm_instance_id)
     response = RestClient.get(
-      "https://#{region}.power-iaas.cloud.ibm.com" \
+      IC_POWERVS_ENDPOINT.gsub("{region}", region) +
       "/pcloud/v1/cloud-instances/#{guid}/pvm-instances/#{pvm_instance_id}",
       'Authorization' => token.get,
       'CRN'           => crn,
@@ -100,7 +103,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
   # @return [Array<Hash>] all networks for this IBM Power Cloud instance
   def get_networks(token, guid, crn, region)
     response = RestClient.get(
-      "https://#{region}.power-iaas.cloud.ibm.com" \
+      IC_POWERVS_ENDPOINT.gsub("{region}", region) +
       "/pcloud/v1/cloud-instances/#{guid}/networks",
       'Authorization' => token.get,
       'CRN'           => crn,
@@ -125,7 +128,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
   # @return [Hash] Network
   def get_network(token, guid, crn, region, network_id)
     response = RestClient.get(
-      "https://#{region}.power-iaas.cloud.ibm.com" \
+      IC_POWERVS_ENDPOINT.gsub("{region}", region) +
       "/pcloud/v1/cloud-instances/#{guid}/networks/#{network_id}",
       'Authorization' => token.get,
       'CRN'           => crn,
@@ -143,7 +146,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
   # @return [Array<Hash>] all Images for this instance
   def get_images(token, guid, crn, region)
     response = RestClient.get(
-      "https://#{region}.power-iaas.cloud.ibm.com" \
+      IC_POWERVS_ENDPOINT.gsub("{region}", region) +
       "/pcloud/v1/cloud-instances/#{guid}/images",
       'Authorization' => token.get,
       'CRN'           => crn,
@@ -172,7 +175,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
 
     begin
       response = RestClient.get(
-        "https://#{region}.power-iaas.cloud.ibm.com" \
+        IC_POWERVS_ENDPOINT.gsub("{region}", region) +
         "/pcloud/v1/cloud-instances/#{guid}/images/#{img_id}",
         'Authorization' => token.get,
         'CRN'           => crn,
@@ -194,8 +197,8 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
   #
   def get_pvstenantid(token)
     response = RestClient.get(
-      "https://resource-controller.cloud.ibm.com/v2/resource_instances",
-      'Authorization' => token.get,
+      IC_RESOURCE_CONT_ENDPOINT + "/v2/resource_instances",
+      'Authorization' => token.get
     )
 
     plst = []
@@ -218,7 +221,8 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
   # @return [Array<Hash>] all ssh keys for this instance
   def get_sshkeys(token, tenant)
     response = RestClient.get(
-      "https://#{tenant[:region]}.power-iaas.cloud.ibm.com/pcloud/v1/tenants/#{tenant[:tenant_id]}",
+      IC_POWERVS_ENDPOINT.gsub("{region}", tenant[:region]) +
+      "/pcloud/v1/tenants/#{tenant[:tenant_id]}",
       'Authorization' => token.get,
       'crn' => tenant[:crn]
     )
@@ -235,7 +239,8 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
   # @return [Array<Hash>] all volumes for this instance
   def get_volumes(token, guid, crn, region)
     response = RestClient.get(
-      "https://#{region}.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/#{guid}/volumes",
+      IC_POWERVS_ENDPOINT.gsub("{region}", region) +
+      "/pcloud/v1/cloud-instances/#{guid}/volumes",
       'Authorization' => token.get,
       'CRN'           => crn,
       'Content-Type'  => 'application/json'
@@ -251,7 +256,8 @@ module ManageIQ::Providers::IbmCloudVirtualServers::APICalls
 
   def get_volume(token, guid, crn, region, volume_id)
     response = RestClient.get(
-      "https://#{region}.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/#{guid}/volumes/#{volume_id}",
+      IC_POWERVS_ENDPOINT.gsub("{region}", region) +
+      "/pcloud/v1/cloud-instances/#{guid}/volumes/#{volume_id}",
       'Authorization' => token.get,
       'CRN'           => crn,
       'Content-Type'  => 'application/json'

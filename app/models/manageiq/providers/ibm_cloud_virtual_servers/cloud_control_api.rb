@@ -2,13 +2,15 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudControlAPI
   require 'rest-client'
   require 'json'
 
+  include ManageIQ::Providers::IbmCloudVirtualServers::Config
+
   def initialize(creds)
     @creds  = creds
   end
 
   def del_network(network_id)
     response = RestClient.delete(
-      "https://#{@creds[:region]}.power-iaas.cloud.ibm.com" \
+      IC_POWERVS_ENDPOINT.gsub("{region}", @creds[:region]) +
       "/pcloud/v1/cloud-instances/#{@creds[:guid]}/networks/#{network_id}",
       'Authorization' => @creds[:token].get,
       'CRN'           => @creds[:crn],
@@ -20,7 +22,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudControlAPI
 
   def create_key_pair(name, sshkey)
     response = RestClient.post(
-      "https://#{@creds[:region]}.power-iaas.cloud.ibm.com/" \
+      IC_POWERVS_ENDPOINT.gsub("{region}", @creds[:region]) +
       "pcloud/v1/tenants/#{@creds[:tenant_id]}/sshkeys",
       {
         "name"   => name,
@@ -37,7 +39,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudControlAPI
 
   def delete_key_pair(name)
     response = RestClient.delete(
-      "https://#{@creds[:region]}.power-iaas.cloud.ibm.com/" \
+      IC_POWERVS_ENDPOINT.gsub("{region}", @creds[:region]) +
       "pcloud/v1/tenants/#{@creds[:tenant_id]}/sshkeys/#{name}",
       headers={
         'Authorization' => @creds[:token].get,
@@ -50,7 +52,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudControlAPI
 
   def del_image(image_id)
     response = RestClient.delete(
-      "https://#{@creds[:region]}.power-iaas.cloud.ibm.com" \
+      IC_POWERVS_ENDPOINT.gsub("{region}", @creds[:region]) +
       "/pcloud/v1/cloud-instances/#{@creds[:guid]}/images/#{image_id}",
       'Authorization' => @creds[:token].get,
       'CRN'           => @creds[:crn],

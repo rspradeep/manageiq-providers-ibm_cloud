@@ -1,6 +1,8 @@
 module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
   extend ActiveSupport::Concern
 
+  include ManageIQ::Providers::IbmCloudVirtualServers::Config
+
   def required_credential_fields(_type)
     [:auth_key]
   end
