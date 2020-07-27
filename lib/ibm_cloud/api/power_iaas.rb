@@ -3,10 +3,6 @@ require "ibm_cloud/api/base_service"
 module IbmCloud
   module API
     class PowerIaas < BaseService
-      def self.endpoint(region)
-        "https://#{region}.power-iaas.cloud.ibm.com/pcloud/v1"
-      end
-
       # Create an API Client object for the Power IaaS service
       #
       # @param region [String] the IBM Power Cloud instance region
@@ -21,7 +17,7 @@ module IbmCloud
       end
 
       def endpoint
-        self.class.endpoint(region)
+        "https://#{region}.power-iaas.cloud.ibm.com/pcloud/v1"
       end
 
       # Get all PVM instances in an IBM Power Cloud instance

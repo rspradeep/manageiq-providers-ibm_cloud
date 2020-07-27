@@ -1,9 +1,7 @@
-require "ibm_cloud/api/resource_controller/resource"
-
 module IbmCloud
   module API
-    class ResourceController
-      def self.endpoint
+    class ResourceController < BaseService
+      def endpoint
         "https://resource-controller.cloud.ibm.com/v2"
       end
 
@@ -12,9 +10,9 @@ module IbmCloud
       end
 
       def get_resources
-        url = "#{self.class.endpoint}/resource_instances"
-        response = RestClient.get(url, headers)
-        resources = JSON.parse(response.body)["resources"] || []
+        resources = get("resource_instances")["resources"] || []
+
+        require "ibm_cloud/api/resource_controller/resource"
         resources.map { |instance| Resource.new(instance) }
       end
 

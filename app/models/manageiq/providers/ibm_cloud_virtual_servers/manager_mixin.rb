@@ -92,7 +92,8 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
       end
 
       require "ibm_cloud_api"
-      token = IbmCloud::API::IAM.get_token(api_key)
+      iam = IbmCloud::API::IAM.new(api_key)
+      token = iam.get_identity_token
       power_iaas_service = IbmCloud::API::ResourceController.new(token).get_resource(pcloud_guid)
 
       {:token => token, :guid => pcloud_guid, :crn => power_iaas_service.crn, :region => power_iaas_service.region_id}
