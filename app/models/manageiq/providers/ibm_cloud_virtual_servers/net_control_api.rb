@@ -12,7 +12,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::NetControlAPI
     response = RestClient.delete(
       IC_POWERVS_ENDPOINT.gsub("{region}", @creds[:region]) +
       "/pcloud/v1/cloud-instances/#{@creds[:guid]}/networks/#{network_id}",
-      'Authorization' => @creds[:token].get,
+      'Authorization' => @creds[:token].authorization_header,
       'CRN'           => @creds[:crn],
       'Accept'        => 'application/json',
     )
@@ -26,7 +26,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::NetControlAPI
       IC_POWERVS_ENDPOINT.gsub("{region}", @creds[:region]) +
       "/pcloud/v1/cloud-instances/#{@creds[:guid]}/networks",
       subnet.to_json,
-      'Authorization' => @creds[:token].get,
+      'Authorization' => @creds[:token].authorization_header,
       'CRN'           => @creds[:crn],
       'Accept'        => 'application/json',
       'Content-Type'  => 'application/json',

@@ -1,0 +1,20 @@
+module IbmCloud
+  module API
+    class IAM
+      class Token
+        def initialize(access_token, token_type)
+          @access_token = access_token
+          @token_type   = token_type
+        end
+
+        def authorization_header
+          "#{token_type} #{access_token}"
+        end
+
+        private
+
+        attr_reader :access_token, :token_type
+      end
+    end
+  end
+end

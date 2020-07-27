@@ -39,7 +39,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::ControlAPI
         'action' => action
       }
       .to_json,
-      'Authorization' => @creds[:token].get,
+      'Authorization' => @creds[:token].authorization_header,
       'CRN'           => @creds[:crn],
       'Content-Type'  => 'application/json',
       'Accept'        => 'application/json'

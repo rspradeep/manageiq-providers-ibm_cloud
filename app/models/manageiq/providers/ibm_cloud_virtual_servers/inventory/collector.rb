@@ -3,109 +3,56 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector < Manage
   require_nested :NetworkManager
   require_nested :StorageManager
 
-  include ManageIQ::Providers::IbmCloudVirtualServers::APICalls
-  include ManageIQ::Providers::IbmCloudVirtualServers::NetAPICalls
-  include ManageIQ::Providers::IbmCloudVirtualServers::VolAPICalls
-
   def connection
     @connection ||= manager.connect
   end
 
+  def power_iaas
+    @power_iaas ||= IbmCloud::API::PowerIaas.new(*connection.values_at(:region, :guid, :token, :crn))
+  end
+
+  def resource_controller
+    @resource_controller ||= IbmCloud::API::ResourceController.new(connection[:token])
+  end
+
   def vms
-    connection
-    get_pcloudpvminstances(
-      @connection[:token],
-      @connection[:guid],
-      @connection[:crn],
-      @connection[:region]
-    )
+    power_iaas.get_pvm_instances
   end
 
   def networks
-    connection
-    get_networks(
-      @connection[:token],
-      @connection[:guid],
-      @connection[:crn],
-      @connection[:region]
-    )
+    power_iaas.get_networks
   end
 
   def image(img_id)
-    connection
-    get_image(
-      @connection[:token],
-      @connection[:guid],
-      @connection[:crn],
-      @connection[:region],
-      img_id
-    )
+    power_iaas.get_image(img_id)
   end
 
   def images
-    connection
-    get_images(
-      @connection[:token],
-      @connection[:guid],
-      @connection[:crn],
-      @connection[:region]
-    )
+    power_iaas.get_images
   end
 
   def volumes
-    connection
-    get_volumes(
-      @connection[:token],
-      @connection[:guid],
-      @connection[:crn],
-      @connection[:region]
-    )
+    power_iaas.get_volumes
   end
 
   def volume(volume_id)
-    connection
-
-    volume(
-      @connection[:token],
-      @connection[:guid],
-      @connection[:crn],
-      @connection[:region],
-      volume_id
-    )
+    power_iaas.get_volume(volume_id)
   end
 
   def networks
-    connection
-
-    get_networks(
-      @connection[:token],
-      @connection[:guid],
-      @connection[:crn],
-      @connection[:region]
-    )
+    power_iaas.get_networks
   end
 
   def ports(network_id)
-    connection
+    power_iaas.get_network_ports(network_id)
+  end
 
-    get_ports(
-      @connection[:token],
-      @connection[:guid],
-      @connection[:crn],
-      @connection[:region],
-      network_id
-    )
+  def tenant_id
+    power_iaas_service = resource_controller.get_resource(connection[:guid])
+    power_iaas_service&.account_id
   end
 
   def sshkeys
-    connection
-    plst = get_pvstenantid(
-      @connection[:token],
-    )
-
-    # since all the tenants are same,we can use the first tenant and get the list of
-    # ssh keys
-    tenant_sshkeys = get_sshkeys(@connection[:token], plst[0])
-    tenant_sshkeys
+    power_iaas.get_tenant_ssh_keys(tenant_id)
   end
 end
