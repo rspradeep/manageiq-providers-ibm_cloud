@@ -1,5 +1,4 @@
 class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::ProvisionWorkflow < ::MiqProvisionCloudWorkflow
-
   SYSPREP_TIMEZONES = {
     '003' => '(UTC-10:00) Hawaiian Standard Time',
     '004' => '(UTC-09:00) Alaskan Standard Time',
@@ -7,6 +6,10 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::ProvisionWorkfl
     '006' => '(UTC-07:00) US Mountain Standard Time',
     '057' => '(UTC+04:00) Azerbaijan Standard Time',
   }.freeze
+
+  def self.provider_model
+    ManageIQ::Providers::IbmCloudVirtualServers::CloudManager
+  end
 
   def get_timezones(_options = {})
     SYSPREP_TIMEZONES
@@ -20,7 +23,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::ProvisionWorkfl
     []
   end
 
-  def availability_zone_to_cloud_network(src)
+  def availability_zone_to_cloud_network(_src)
     true
   end
 
@@ -59,28 +62,22 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::ProvisionWorkfl
 
   private
 
-  def security_group_to_availability_zones(src)
+  def security_group_to_availability_zones(_src)
     []
   end
 
-  def cloud_network_to_availability_zones(src)
+  def cloud_network_to_availability_zones(_src)
     []
   end
 
-  def cloud_subnet_to_availability_zones(src)
+  def cloud_subnet_to_availability_zones(_src)
     []
   end
 
-  def ip_available_for_selected_network?(ip, src)
+  def ip_available_for_selected_network?(_ip, _src)
     true
   end
 
-  private
-
   def dialog_name_from_automate(message = 'get_dialog_name')
-  end
-
-  def self.provider_model
-    ManageIQ::Providers::IbmCloudVirtualServers::CloudManager
   end
 end
