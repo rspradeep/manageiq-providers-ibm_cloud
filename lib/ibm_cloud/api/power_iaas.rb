@@ -9,11 +9,13 @@ module IbmCloud
       # @param guid [String] the IBM Power Cloud instance GUID
       # @param token [IAMtoken] the IBM Cloud IAM Token object
       # @param crn [String] the IBM Power Cloud instance CRN
-      def initialize(region, guid, token, crn)
+      # @param tenant [String] the IBM Power Cloud account ID
+      def initialize(region, guid, token, crn, tenant)
         @crn    = crn
         @guid   = guid
         @region = region
         @token  = token
+        @tenant = tenant
       end
 
       def endpoint
@@ -101,13 +103,13 @@ module IbmCloud
         get("cloud-instances/#{guid}/networks/#{network_id}/ports")["ports"]
       end
 
-      def get_tenant_ssh_keys(tenant_id)
-        get("tenants/#{tenant_id}")["sshKeys"]
+      def get_ssh_keys
+        get("tenants/#{tenant}")["sshKeys"]
       end
 
       private
 
-      attr_reader :crn, :guid, :region, :token
+      attr_reader :crn, :guid, :region, :tenant, :token
 
       def headers
         {

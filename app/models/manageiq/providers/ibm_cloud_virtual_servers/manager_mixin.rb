@@ -96,7 +96,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
       token = iam.get_identity_token
       power_iaas_service = IbmCloud::API::ResourceController.new(token).get_resource(pcloud_guid)
 
-      {:token => token, :guid => pcloud_guid, :crn => power_iaas_service.crn, :region => power_iaas_service.region_id}
+      {:token => token, :guid => pcloud_guid, :crn => power_iaas_service.crn, :region => power_iaas_service.region_id, :tenant => power_iaas_service.account_id}
     end
 
     def raw_tenant_id(creds)
