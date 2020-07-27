@@ -28,8 +28,8 @@ class ManageIQ::Providers::IbmCloudVirtualServers::NetworkManager::CloudSubnet <
 
     def raw_delete_cloud_subnet
         begin
-            ext_management_system.with_provider_connection({:target => 'network'}) do |net_control|
-                net_control.del_subnet(ems_ref)
+            ext_management_system.with_provider_connection({:target => 'PowerIaas'}) do |power_iaas|
+                power_iaas.delete_network(ems_ref)
             end
         rescue => e
             _log.error "network=[#{name}], error: #{e}"

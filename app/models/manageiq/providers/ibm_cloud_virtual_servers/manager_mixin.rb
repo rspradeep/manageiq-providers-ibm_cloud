@@ -14,29 +14,15 @@ module ManageIQ::Providers::IbmCloudVirtualServers::ManagerMixin
   def connect(options = {})
     auth_key = authentication_key(options[:auth_type])
     creds = self.class.raw_connect(auth_key, uid_ems)
-    api = creds
 
-    begin
-      case options[:target]
-      when 'cloud'
-        creds[:tenant_id] = self.class.raw_tenant_id(creds)
-        api = ManageIQ::Providers::IbmCloudVirtualServers::CloudControlAPI.new(creds)
-      when 'network'
-        api = ManageIQ::Providers::IbmCloudVirtualServers::NetControlAPI.new(creds)
-      when 'storage'
-        api = ManageIQ::Providers::IbmCloudVirtualServers::VolControlAPI.new(creds)
-      when 'control'
-        api = ManageIQ::Providers::IbmCloudVirtualServers::ControlAPI.new(creds)
-      when 'provision'
-        api = ManageIQ::Providers::IbmCloudVirtualServers::ProvAPI.new(creds)
-      when nil, {}
-        api = creds
-      else
-        raise ArgumentError, "Unknown target API set: '#{options[:target]}''"
-      end
+    options[:service] ||= "PowerIaas"
+    case options[:service]
+    when "PowerIaas"
+      region, guid, token, crn, tenant = creds.values_at(:region, :guid, :token, :crn, :tenant)
+      IbmCloud::API::PowerIaas.new(region, guid, token, crn, tenant)
+    else
+      raise ArgumentError, "Unknown target API set: '#{options[:service]}''"
     end
-
-    api
   end
 
   def verify_credentials(_auth_type = nil, options = {})

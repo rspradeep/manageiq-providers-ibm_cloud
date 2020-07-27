@@ -41,6 +41,27 @@ module IbmCloud
         get("cloud-instances/#{guid}/pvm-instances/#{instance_id}")
       end
 
+      def start_pvm_instance(instance_id)
+        post(
+          "cloud-instances/#{guid}/pvm-instances/#{instance_id}/action",
+          "action" => "start"
+        )
+      end
+
+      def stop_pvm_instance(instance_id)
+        post(
+          "cloud-instances/#{guid}/pvm-instances/#{instance_id}/action",
+          "action" => "stop"
+        )
+      end
+
+      def reboot_pvm_instance(instance_id)
+        post(
+          "cloud-instances/#{guid}/pvm-instances/#{instance_id}/action",
+          "action" => "reboot"
+        )
+      end
+
       # Get all images in an IBM Power Cloud instance
       #
       # @return [Array<Hash>] all Images for this instance
@@ -60,6 +81,10 @@ module IbmCloud
         get("cloud-instances/#{guid}/images/#{image_id}")
       rescue
         nil
+      end
+
+      def delete_image(image_id)
+        delete("cloud-instances/#{guid}/images/#{image_id}")
       end
 
       # List all the volumes.
@@ -99,12 +124,28 @@ module IbmCloud
         get("cloud-instances/#{guid}/networks/#{network_id}")
       end
 
+      def create_network(network_hash)
+        post("cloud-instances/#{guid}/networks", network_hash)
+      end
+
+      def delete_network(network_id)
+        delete("cloud-instances/#{guid}/networks/#{network_id}")
+      end
+
       def get_network_ports(network_id)
         get("cloud-instances/#{guid}/networks/#{network_id}/ports")["ports"]
       end
 
       def get_ssh_keys
         get("tenants/#{tenant}")["sshKeys"]
+      end
+
+      def create_key_pair(name, sshkey)
+        post("tenants/#{tenant}/sshkeys", {"name" => name, "sshkey" => sshkey})
+      end
+
+      def delete_key_pair(name)
+        delete("tenants/#{tenant}/sshkeys/#{name}")
       end
 
       private

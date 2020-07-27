@@ -2,8 +2,8 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::AuthKeyPair < M
   IbmCvsKeyPair = Struct.new(:name, :key_name, :fingerprint, :private_key)
 
   def self.raw_create_key_pair(ext_management_system, create_options)
-    cvs = ext_management_system.connect(:target => "cloud")
-    kp = cvs.create_key_pair(create_options[:name], create_options[:public_key])
+    power_iaas = ext_management_system.connect(:target => "PowerIaas")
+    kp = power_iaas.create_key_pair(create_options[:name], create_options[:public_key])
     IbmCvsKeyPair.new(kp["name"], kp["name"], nil, nil)
   rescue => err
     _log.log_backtrace(err)
@@ -22,7 +22,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::AuthKeyPair < M
   end
 
   def raw_delete_key_pair
-    cvs = resource.connect(:target => "cloud")
+    power_iaas = resource.connect(:target => "PowerIaas")
     kp = cvs.delete_key_pair(name)
   rescue => err
     _log.log_backtrace(err)

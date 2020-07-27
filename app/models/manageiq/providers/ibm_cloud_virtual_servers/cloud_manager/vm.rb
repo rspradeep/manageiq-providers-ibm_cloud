@@ -2,22 +2,24 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::Vm < ManageIQ::
   supports     :reboot_guest
   supports_not :suspend
 
-  def provider_object(connection = nil)
-    connection.target_vmi(ems_ref)
-  end
-
   def raw_start
-    with_provider_object({:target => 'control'}, &:power_on)
+    with_provider_connection({:target => 'PowerIaas'}) do |power_iaas|
+      power_iaas.start_pvm_instance(ems_ref)
+    end
     update!(:raw_power_state => "on")
   end
 
   def raw_stop
-    with_provider_object({:target => 'control'}, &:power_off)
+    with_provider_connection({:target => 'PowerIaas'}) do |power_iaas|
+      power_iaas.stop_pvm_instance(ems_ref)
+    end
     update!(:raw_power_state => "off")
   end
 
   def raw_reboot_guest
-    with_provider_object({:target => 'control'}, &:soft_reboot)
+    with_provider_connection({:target => 'PowerIaas'}) do |power_iaas|
+      power_iaas.reboot_pvm_instance(ems_ref)
+    end
     update!(:raw_power_state => "off")
   end
 

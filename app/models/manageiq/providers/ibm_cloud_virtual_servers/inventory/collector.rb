@@ -4,10 +4,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Collector < Manage
   require_nested :StorageManager
 
   def connection
-    @power_iaas ||= begin
-      region, guid, token, crn, tenant = manager.connect.values_at(:region, :guid, :token, :crn, :tenant)
-      IbmCloud::API::PowerIaas.new(region, guid, token, crn, tenant)
-    end
+    @power_iaas ||= manager.connect(:service => "PowerIaas")
   end
 
   def vms
