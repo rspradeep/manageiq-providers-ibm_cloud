@@ -12,12 +12,11 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister < Manage
   private
 
   def initialize_cloud_inventory_collections
-    %i[availability_zones vms hardwares disks operating_systems networks cloud_volumes].each do |name|
-      add_cloud_collection(name)
-    end
-
+    add_cloud_collection(:vms)
+    add_cloud_collection(:hardwares)
+    add_cloud_collection(:disks)
+    add_cloud_collection(:operating_systems)
     add_key_pairs
-
     add_cloud_collection(:miq_templates) do |builder|
       builder.add_properties(:model_class => ::ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::Template)
     end
@@ -26,15 +25,13 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister < Manage
   end
 
   def initialize_network_inventory_collections
-    %i[cloud_networks cloud_subnets network_ports cloud_subnet_network_ports availability_zones].each do |name|
+    %i[cloud_networks cloud_subnets network_ports cloud_subnet_network_ports].each do |name|
       add_network_collection(name)
     end
   end
 
   def initialize_storage_inventory_collections
-    %i[cloud_volumes].each do |name|
-      add_storage_collection(name)
-    end
+    add_storage_collection(:cloud_volumes)
   end
 
   def add_key_pairs(extra_properties = {})
