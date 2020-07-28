@@ -62,6 +62,14 @@ module IbmCloud
         )
       end
 
+      def create_pvm_instance(instance_hash)
+        post("cloud-instances/#{guid}/pvm-instances", instance_hash)
+      end
+
+      def delete_pvm_instance(instance_id)
+        delete("cloud-instances/#{guid}/pvm-instances/#{instance_id}")
+      end
+
       # Get all images in an IBM Power Cloud instance
       #
       # @return [Array<Hash>] all Images for this instance
