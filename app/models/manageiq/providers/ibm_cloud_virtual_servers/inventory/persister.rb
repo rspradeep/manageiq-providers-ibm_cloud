@@ -20,6 +20,8 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister < Manage
     add_cloud_collection(:miq_templates) do |builder|
       builder.add_properties(:model_class => ::ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::Template)
     end
+
+    add_advanced_settings
   end
 
   def initialize_network_inventory_collections
@@ -52,6 +54,16 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister < Manage
     add_collection(storage, name) do |builder|
       builder.add_properties(:parent => storage_manager)
       yield builder if block_given?
+    end
+  end
+
+  def add_advanced_settings
+    add_collection(cloud, :vms_and_templates_advanced_settings) do |builder|
+      builder.add_properties(
+        :manager_ref                  => %i(resource),
+        :model_class                  => ::AdvancedSetting,
+        :parent_inventory_collections => %i(vms)
+      )
     end
   end
 

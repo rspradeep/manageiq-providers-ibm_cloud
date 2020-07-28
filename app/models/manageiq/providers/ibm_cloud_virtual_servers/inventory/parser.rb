@@ -26,13 +26,23 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
           :memory_mb       => Integer(instance['memory']) * 1024,
         }
 
+      advanced = [ 
+        {
+          :name         => 'processors',
+          :display_name => N_('Actual CPU amount'),
+          :description  => N_('A floating value indicating the amount of CPUs given to this instance'),
+          :value        => instance['processors'],
+          :read_only    => true
+        }
+      ]
+
       vol_ids   = instance['volumeIDs']
 
       img_id    = instance['imageID']
 
       ext_ports = instance['networks'].reject {|net| net['externalIP'].blank?}
 
-      yield vmi, hardw, vol_ids, img_id, ext_ports
+      yield vmi, hardw, vol_ids, img_id, ext_ports, advanced
     end
   end
 
@@ -103,7 +113,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
       ps_vol = persister.cloud_volumes.build(volume)
     end
 
-    instances do |vmi, hardw, vol_ids, img_id, ext_ports|
+    instances do |vmi, hardw, vol_ids, img_id, ext_ports, advanced|
       # saving general VMI information
       ps_vmi = persister.vms.build(vmi)
 
@@ -138,6 +148,12 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
         net_id = ext_port['networkID']
         subnet_to_ext_ports[net_id] ||= []
         subnet_to_ext_ports[net_id]  << ext_port
+      end
+
+      # settings and values specific to IBM's clouds
+      advanced.each do |setting|
+        setting[:resource] = ps_vmi
+        persister.vms_and_templates_advanced_settings.build(setting)
       end
     end
 
