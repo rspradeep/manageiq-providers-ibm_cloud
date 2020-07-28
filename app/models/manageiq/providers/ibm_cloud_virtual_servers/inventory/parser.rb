@@ -22,14 +22,12 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
     collector.vms.each do |instance|
       # saving general VMI information
       ps_vmi = persister.vms.build(
-        :availability_zone => "",
         :description       => "IBM Cloud Server",
         :ems_ref           => instance["pvmInstanceID"],
         :flavor            => "",
         :location          => "unknown",
         :name              => instance["serverName"],
         :vendor            => "ibm",
-        :genealogy_parent  => "",
         :connection_state  => "connected",
         :raw_power_state   => instance["status"] == "ACTIVE" ? "on" : "off",
         :uid_ems           => instance["pvmInstanceID"],
@@ -45,8 +43,8 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
       # saving instance disk information
       instance["volumeIDs"].each do |vol_id|
         persister.disks.build(
-          :hardware    => ps_hw,
-          :device_name => vol_id,
+          :hardware        => ps_hw,
+          :device_name     => vol_id,
           :device_type     => "block",
           :controller_type => "ibm",
           :backing         => persister.cloud_volumes.find(vol_id),
@@ -97,16 +95,16 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
 
       img_to_os[id] = os
       persister.miq_templates.build(
-          :uid_ems            => id,
-          :ems_ref            => id,
-          :name               => name,
-          :description        => desc,
-          :location           => "unknown",
-          :vendor             => "ibm",
-          :connection_state   => "connected",
-          :raw_power_state    => "never",
-          :template           => true,
-          :publicly_available => true,
+        :uid_ems            => id,
+        :ems_ref            => id,
+        :name               => name,
+        :description        => desc,
+        :location           => "unknown",
+        :vendor             => "ibm",
+        :connection_state   => "connected",
+        :raw_power_state    => "never",
+        :template           => true,
+        :publicly_available => true,
       )
     end
   end
@@ -122,7 +120,6 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
         :description       => 'IBM Cloud Block-Storage Volume',
         :volume_type       => vol['diskType'],
         :size              => vol['size'],
-        :availability_zone => Zone.default_zone,
       )
     end
   end
@@ -130,12 +127,11 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
   def networks
     collector.networks.each do |network|
       persister_cloud_networks = persister.cloud_networks.build(
-        :ems_ref             => "#{network['networkID']}-#{network['type']}",
-        :name                => "#{network['name']}-#{network['type']}",
-        :cidr                => "",
-        :enabled             => true,
-        :orchestration_stack => '',
-        :status              => 'active'
+        :ems_ref => "#{network['networkID']}-#{network['type']}",
+        :name    => "#{network['name']}-#{network['type']}",
+        :cidr    => "",
+        :enabled => true,
+        :status  => 'active'
       )
 
       persister_cloud_subnet = persister.cloud_subnets.build(
