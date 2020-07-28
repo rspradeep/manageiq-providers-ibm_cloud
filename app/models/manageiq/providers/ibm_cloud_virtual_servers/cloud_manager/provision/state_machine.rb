@@ -12,7 +12,7 @@ module ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::Provision::Sta
   end
 
   def poll_clone_complete
-    clone_status, status_message = do_clone_task_check(phase_context[:clone_task_ref])
+    _clone_status, _status_message = do_clone_task_check(phase_context[:clone_task_ref])
     clone_status = true
 
     if clone_status

@@ -26,7 +26,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
           :memory_mb       => Integer(instance['memory']) * 1024,
         }
 
-      advanced = [ 
+      advanced = [
         {
           :name         => 'processors',
           :display_name => N_('Actual CPU amount'),
@@ -36,16 +36,15 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
         }
       ]
 
-      vol_ids   = instance['volumeIDs']
+      vol_ids = instance['volumeIDs']
 
-      img_id    = instance['imageID']
+      img_id = instance['imageID']
 
-      ext_ports = instance['networks'].reject {|net| net['externalIP'].blank?}
+      ext_ports = instance['networks'].reject { |net| net['externalIP'].blank? }
 
       yield vmi, hardw, vol_ids, img_id, ext_ports, advanced
     end
   end
-
 
   def pub_img_os(img_id)
     image = collector.image(img_id)
@@ -63,7 +62,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
       desc    = "System: #{os}, Architecture: #{arch}, Endianess: #{endian}"
 
       image =
-      {
+        {
           :uid_ems            => id,
           :ems_ref            => id,
           :name               => name,
@@ -74,7 +73,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
           :raw_power_state    => "never",
           :template           => true,
           :publicly_available => true,
-      }
+        }
 
       yield image, os
     end
@@ -120,7 +119,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
     end
 
     volumes do |volume|
-      ps_vol = persister.cloud_volumes.build(volume)
+      persister.cloud_volumes.build(volume)
     end
 
     instances do |vmi, hardw, vol_ids, img_id, ext_ports, advanced|
@@ -139,12 +138,12 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
         )
 
         disk.assign_attributes(
-            :device_type     => 'block',
-            :controller_type => 'ibm',
-            :backing         => persister.cloud_volumes.find(vol_id),
-            :location        => vol_id,
-            :size            => 20)
-
+          :device_type     => 'block',
+          :controller_type => 'ibm',
+          :backing         => persister.cloud_volumes.find(vol_id),
+          :location        => vol_id,
+          :size            => 20
+        )
       end
 
       # saving OS information
@@ -157,7 +156,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
       ext_ports.each do |ext_port|
         net_id = ext_port['networkID']
         subnet_to_ext_ports[net_id] ||= []
-        subnet_to_ext_ports[net_id]  << ext_port
+        subnet_to_ext_ports[net_id] << ext_port
       end
 
       # settings and values specific to IBM's clouds
@@ -188,7 +187,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
         :ip_version       => '4',
         :network_protocol => 'IPv4'
       )
-      
+
       mac_to_port = {}
 
       collector.ports(network['networkID']).each do |port|

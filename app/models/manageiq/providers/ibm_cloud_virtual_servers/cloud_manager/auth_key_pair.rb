@@ -7,7 +7,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::AuthKeyPair < M
     IbmCvsKeyPair.new(kp["name"], kp["name"], nil, nil)
   rescue => err
     _log.log_backtrace(err)
-    _log.error "keypair=[#{name}], error: #{err}"
+    _log.error("keypair=[#{name}], error: #{err}")
     raise MiqException::Error, err.to_s, err.backtrace
   end
 
@@ -23,10 +23,10 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::AuthKeyPair < M
 
   def raw_delete_key_pair
     power_iaas = resource.connect(:target => "PowerIaas")
-    kp = cvs.delete_key_pair(name)
+    cvs.delete_key_pair(name)
   rescue => err
     _log.log_backtrace(err)
-    _log.error "keypair=[#{name}], error: #{err}"
+    _log.error("keypair=[#{name}], error: #{err}")
     raise MiqException::Error, err.to_s, err.backtrace
   end
 

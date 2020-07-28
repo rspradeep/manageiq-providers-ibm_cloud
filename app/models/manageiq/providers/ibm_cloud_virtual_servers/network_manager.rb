@@ -70,10 +70,10 @@ class ManageIQ::Providers::IbmCloudVirtualServers::NetworkManager < ManageIQ::Pr
       type ||= 'vlan'
 
       subnet = {
-        :type => type,
-        :name => options[:name],
-        :cidr => options[:cidr],
-        :gateway => options[:gateway_ip],
+        :type       => type,
+        :name       => options[:name],
+        :cidr       => options[:cidr],
+        :gateway    => options[:gateway_ip],
         :dnsservers => options[:dns_nameservers],
       }
 
