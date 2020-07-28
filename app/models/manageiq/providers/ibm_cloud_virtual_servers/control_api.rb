@@ -2,6 +2,8 @@ class ManageIQ::Providers::IbmCloudVirtualServers::ControlAPI
   require 'rest-client'
   require 'json'
 
+  include ManageIQ::Providers::IbmCloudVirtualServers::Config
+
   def initialize(creds)
     @creds  = creds
     @vmi_id = nil
@@ -31,7 +33,8 @@ class ManageIQ::Providers::IbmCloudVirtualServers::ControlAPI
 
   def cloud_vmi_action(action)
     RestClient.post(
-      "https://#{@creds[:region]}.power-iaas.cloud.ibm.com/pcloud/v1/cloud-instances/#{@creds[:guid]}/pvm-instances/#{@vmi_id}/action",
+      IC_POWERVS_ENDPOINT.gsub("{region}", @creds[:region]) +
+      "/pcloud/v1/cloud-instances/#{@creds[:guid]}/pvm-instances/#{@vmi_id}/action",
       {
         'action' => action
       }

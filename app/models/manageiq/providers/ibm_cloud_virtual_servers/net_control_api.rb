@@ -2,13 +2,15 @@ class ManageIQ::Providers::IbmCloudVirtualServers::NetControlAPI
   require 'rest-client'
   require 'json'
 
+  include ManageIQ::Providers::IbmCloudVirtualServers::Config
+
   def initialize(creds)
     @creds  = creds
   end
 
   def del_subnet(network_id)
     response = RestClient.delete(
-      "https://#{@creds[:region]}.power-iaas.cloud.ibm.com" \
+      IC_POWERVS_ENDPOINT.gsub("{region}", @creds[:region]) +
       "/pcloud/v1/cloud-instances/#{@creds[:guid]}/networks/#{network_id}",
       'Authorization' => @creds[:token].get,
       'CRN'           => @creds[:crn],
@@ -21,7 +23,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::NetControlAPI
 
   def create_subnet(subnet)
     response = RestClient.post(
-      "https://#{@creds[:region]}.power-iaas.cloud.ibm.com" \
+      IC_POWERVS_ENDPOINT.gsub("{region}", @creds[:region]) +
       "/pcloud/v1/cloud-instances/#{@creds[:guid]}/networks",
       subnet.to_json,
       'Authorization' => @creds[:token].get,
