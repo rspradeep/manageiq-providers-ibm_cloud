@@ -55,9 +55,4 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager < ManageIQ::Prov
   def self.description
     @description ||= IC_SERVICE_DESC.freeze
   end
-
-  def start_clone(clone_options)
-    _log.info(clone_options.inspect)
-  end
-
 end

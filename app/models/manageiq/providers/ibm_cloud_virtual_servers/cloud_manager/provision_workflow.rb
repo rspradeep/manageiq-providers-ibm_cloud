@@ -40,13 +40,13 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::ProvisionWorkfl
     []
   end
 
-  def allowed_cloud_subnets(_options = {})
-    []
+  def allowed_vlans(_options = {})
+    subnets = load_ar_obj(resources_for_ui[:ems]).cloud_subnets
+    Hash[subnets.collect { |subnet| [subnet[:ems_ref], subnet[:name]] }]
   end
 
-  def allowed_number_of_vms(_options = {})
-    a = *(1..10)
-    Hash[a.zip(a.map(&:to_s))]
+  def allowed_cloud_subnets(_options = {})
+    []
   end
 
   def allowed_templates(_options = {})
@@ -74,13 +74,6 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::ProvisionWorkfl
   def ip_available_for_selected_network?(ip, src)
     true
   end
-
-
-
-
-
-
-
 
   private
 
