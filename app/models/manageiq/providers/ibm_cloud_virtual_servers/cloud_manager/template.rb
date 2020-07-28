@@ -9,7 +9,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::Template < Mana
 
   def provider_object(connection = nil)
     connection ||= ext_management_system.connect
-    connection.images[ems_ref]
+    # connection.images[ems_ref]
   end
 
   def destroy
