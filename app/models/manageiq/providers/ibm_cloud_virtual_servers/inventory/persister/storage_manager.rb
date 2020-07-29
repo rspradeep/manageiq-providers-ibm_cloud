@@ -1,6 +1,5 @@
 class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister::StorageManager < ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister
-  def initialize_inventory_collections
-    initialize_cloud_inventory_collections
-    initialize_storage_inventory_collections
+  def network_manager
+    manager.parent_manager.network_manager
   end
 end

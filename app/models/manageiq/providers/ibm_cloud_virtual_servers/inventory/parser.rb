@@ -3,52 +3,84 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
   require_nested :NetworkManager
   require_nested :StorageManager
 
+  attr_reader :img_to_os, :subnet_to_ext_ports
+
+  def initialize
+    @img_to_os           = {}
+    @subnet_to_ext_ports = {}
+  end
+
+  def parse
+    images
+    volumes
+    instances
+    networks
+    sshkeys
+  end
+
   def instances
     collector.vms.each do |instance|
-      vmi =
-        {
-          :availability_zone => "",
-          :description       => "IBM Cloud Server",
-          :ems_ref           => instance["pvmInstanceID"],
-          :flavor            => "",
-          :location          => "unknown",
-          :name              => instance["serverName"],
-          :vendor            => 'ibm',
-          :genealogy_parent  => "",
-          :connection_state  => "connected",
-          :raw_power_state   => instance["status"] == 'ACTIVE' ? 'on' : 'off',
-          :uid_ems           => instance["pvmInstanceID"],
-        }
+      # saving general VMI information
+      ps_vmi = persister.vms.build(
+        :description       => "IBM Cloud Server",
+        :ems_ref           => instance["pvmInstanceID"],
+        :flavor            => "",
+        :location          => "unknown",
+        :name              => instance["serverName"],
+        :vendor            => "ibm",
+        :connection_state  => "connected",
+        :raw_power_state   => instance["status"] == "ACTIVE" ? "on" : "off",
+        :uid_ems           => instance["pvmInstanceID"],
+      )
 
-      hardw =
-        {
-          :cpu_total_cores => Float(instance['processors']).ceil,
-          :memory_mb       => Integer(instance['memory']) * 1024,
-        }
+      # saving hardware information (CPU, Memory, etc.)
+      ps_hw = persister.hardwares.build(
+        :vm_or_template  => ps_vmi,
+        :cpu_total_cores => Float(instance["processors"]).ceil,
+        :memory_mb       => Integer(instance["memory"]) * 1024,
+      )
 
-      advanced = [
-        {
-          :name         => 'processors',
-          :display_name => N_('Actual CPU amount'),
-          :description  => N_('A floating value indicating the amount of CPUs given to this instance'),
-          :value        => instance['processors'],
-          :read_only    => true
-        }
-      ]
+      # saving instance disk information
+      instance["volumeIDs"].each do |vol_id|
+        persister.disks.build(
+          :hardware        => ps_hw,
+          :device_name     => vol_id,
+          :device_type     => "block",
+          :controller_type => "ibm",
+          :backing         => persister.cloud_volumes.find(vol_id),
+          :location        => vol_id,
+          :size            => 20
+        )
+      end
 
-      vol_ids = instance['volumeIDs']
+      # saving OS information
+      os = img_to_os[instance['imageID']] || pub_img_os(instance['imageID'])
+      persister.operating_systems.build(
+        :vm_or_template => ps_vmi,
+        :product_name   => os
+      )
 
-      img_id = instance['imageID']
+      # saving exteral network ports
+      external_ports = instance["networks"].reject { |net| net["externalIP"].blank? }
+      external_ports.each do |ext_port|
+        net_id = ext_port['networkID']
+        subnet_to_ext_ports[net_id] ||= []
+        subnet_to_ext_ports[net_id]  << ext_port
+      end
 
-      ext_ports = instance['networks'].reject { |net| net['externalIP'].blank? }
-
-      yield vmi, hardw, vol_ids, img_id, ext_ports, advanced
+      persister.vms_and_templates_advanced_settings.build(
+        :resource     => ps_vmi,
+        :name         => 'processors',
+        :display_name => N_('Actual CPU amount'),
+        :description  => N_('A floating value indicating the amount of CPUs given to this instance'),
+        :value        => instance['processors'],
+        :read_only    => true
+      )
     end
   end
 
   def pub_img_os(img_id)
-    image = collector.image(img_id)
-    !image.nil? ? image['specifications']['operatingSystem'] : nil
+    collector.image(img_id)&.dig("specifications", "operatingSystem")
   end
 
   def images
@@ -61,119 +93,45 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
       endian  = ibm_image['specifications']['endianness']
       desc    = "System: #{os}, Architecture: #{arch}, Endianess: #{endian}"
 
-      image =
-        {
-          :uid_ems            => id,
-          :ems_ref            => id,
-          :name               => name,
-          :description        => desc,
-          :location           => "unknown",
-          :vendor             => "ibm",
-          :connection_state   => "connected",
-          :raw_power_state    => "never",
-          :template           => true,
-          :publicly_available => true,
-        }
-
-      yield image, os
+      img_to_os[id] = os
+      persister.miq_templates.build(
+        :uid_ems            => id,
+        :ems_ref            => id,
+        :name               => name,
+        :description        => desc,
+        :location           => "unknown",
+        :vendor             => "ibm",
+        :connection_state   => "connected",
+        :raw_power_state    => "never",
+        :template           => true,
+        :publicly_available => true,
+      )
     end
   end
 
   def volumes
     collector.volumes.each do |vol|
-      volume =
-        {
-          :ems_ref           => vol['volumeID'],
-          :name              => vol['name'],
-          :status            => vol['state'],
-          :bootable          => vol['bootable'],
-          :creation_time     => vol['creationDate'],
-          :description       => 'IBM Cloud Block-Storage Volume',
-          :volume_type       => vol['diskType'],
-          :size              => vol['size'],
-          :availability_zone => Zone.default_zone,
-        }
-
-      yield volume
+      persister.cloud_volumes.build(
+        :ems_ref           => vol['volumeID'],
+        :name              => vol['name'],
+        :status            => vol['state'],
+        :bootable          => vol['bootable'],
+        :creation_time     => vol['creationDate'],
+        :description       => 'IBM Cloud Block-Storage Volume',
+        :volume_type       => vol['diskType'],
+        :size              => vol['size'],
+      )
     end
   end
 
-  def sshkeys
-    collector.sshkeys.each do |tkey|
-      tenant_key = {
-        :creationDate => tkey['creationDate'],
-        :name         => tkey['name'],
-        :sshKey       => tkey['sshKey'],
-      }
-      yield tenant_key
-    end
-  end
-
-  def parse
-    img_to_os            = {}
-    subnet_to_ext_ports  = {}
-
-    images do |image, os|
-      img_to_os[image[:ems_ref]] = os
-      persister.miq_templates.build(image)
-    end
-
-    volumes do |volume|
-      persister.cloud_volumes.build(volume)
-    end
-
-    instances do |vmi, hardw, vol_ids, img_id, ext_ports, advanced|
-      # saving general VMI information
-      ps_vmi = persister.vms.build(vmi)
-
-      # saving hardware information (CPU, Memory, etc.)
-      hardw[:vm_or_template] = ps_vmi
-      ps_hw = persister.hardwares.build(hardw)
-
-      # saving instance disk information
-      vol_ids.each do |vol_id|
-        disk = persister.disks.find_or_build_by(
-          :hardware    => ps_hw,
-          :device_name => vol_id
-        )
-
-        disk.assign_attributes(
-          :device_type     => 'block',
-          :controller_type => 'ibm',
-          :backing         => persister.cloud_volumes.find(vol_id),
-          :location        => vol_id,
-          :size            => 20
-        )
-      end
-
-      # saving OS information
-      os = img_to_os[img_id]
-      os ||= pub_img_os(img_id)
-      system = {:vm_or_template => ps_vmi, :product_name => os}
-      persister.operating_systems.build(system)
-
-      # saving exteral network ports
-      ext_ports.each do |ext_port|
-        net_id = ext_port['networkID']
-        subnet_to_ext_ports[net_id] ||= []
-        subnet_to_ext_ports[net_id] << ext_port
-      end
-
-      # settings and values specific to IBM's clouds
-      advanced.each do |setting|
-        setting[:resource] = ps_vmi
-        persister.vms_and_templates_advanced_settings.build(setting)
-      end
-    end
-
+  def networks
     collector.networks.each do |network|
       persister_cloud_networks = persister.cloud_networks.build(
-        :ems_ref             => "#{network['networkID']}-#{network['type']}",
-        :name                => "#{network['name']}-#{network['type']}",
-        :cidr                => '',
-        :enabled             => true,
-        :orchestration_stack => '',
-        :status              => 'active'
+        :ems_ref => "#{network['networkID']}-#{network['type']}",
+        :name    => "#{network['name']}-#{network['type']}",
+        :cidr    => "",
+        :enabled => true,
+        :status  => 'active'
       )
 
       persister_cloud_subnet = persister.cloud_subnets.build(
@@ -211,9 +169,8 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
         )
       end
 
-      ext_ports = subnet_to_ext_ports[network['networkID']]
-
-      (ext_ports || []).each do |port|
+      external_ports = subnet_to_ext_ports[network['networkID']] || []
+      external_ports.each do |port|
         port_ps = mac_to_port[port['macAddress']]
 
         persister.cloud_subnet_network_ports.build(
@@ -223,8 +180,16 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
         )
       end
     end
+  end
 
-    sshkeys do |tenant_key|
+  def sshkeys
+    collector.sshkeys.each do |tkey|
+      tenant_key = {
+        :creationDate => tkey['creationDate'],
+        :name         => tkey['name'],
+        :sshKey       => tkey['sshKey'],
+      }
+
       # save the tenant instance
       persister.key_pairs.build(:name => tenant_key[:name])
     end
