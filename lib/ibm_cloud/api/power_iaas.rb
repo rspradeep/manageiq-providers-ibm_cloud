@@ -44,26 +44,26 @@ module IbmCloud
       def start_pvm_instance(instance_id)
         post(
           "cloud-instances/#{guid}/pvm-instances/#{instance_id}/action",
-          "action" => "start"
+          {"action" => "start"}.to_json
         )
       end
 
       def stop_pvm_instance(instance_id)
         post(
           "cloud-instances/#{guid}/pvm-instances/#{instance_id}/action",
-          "action" => "stop"
+          {"action" => "stop"}.to_json
         )
       end
 
       def reboot_pvm_instance(instance_id)
         post(
           "cloud-instances/#{guid}/pvm-instances/#{instance_id}/action",
-          "action" => "reboot"
+          {"action" => "reboot"}.to_json
         )
       end
 
       def create_pvm_instance(instance_hash)
-        post("cloud-instances/#{guid}/pvm-instances", instance_hash)
+        post("cloud-instances/#{guid}/pvm-instances", instance_hash.to_json)
       end
 
       def delete_pvm_instance(instance_id)
@@ -133,7 +133,7 @@ module IbmCloud
       end
 
       def create_network(network_hash)
-        post("cloud-instances/#{guid}/networks", network_hash)
+        post("cloud-instances/#{guid}/networks", network_hash.to_json)
       end
 
       def delete_network(network_id)
@@ -149,7 +149,8 @@ module IbmCloud
       end
 
       def create_key_pair(name, sshkey)
-        post("tenants/#{tenant}/sshkeys", {"name" => name, "sshkey" => sshkey})
+        payload = {"name" => name, "sshkey" => sshkey}
+        post("tenants/#{tenant}/sshkeys", payload.to_json)
       end
 
       def delete_key_pair(name)
