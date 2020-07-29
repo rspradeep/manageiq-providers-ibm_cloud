@@ -9,34 +9,62 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister < Manage
     initialize_storage_inventory_collections
   end
 
+  def cloud_manager
+    manager.kind_of?(EmsCloud) ? manager : manager.parent_manager
+  end
+
+  def network_manager
+    manager.kind_of?(EmsNetwork) ? manager : manager.network_manager
+  end
+
+  def storage_manager
+    manager.kind_of?(EmsStorage) ? manager : manager.storage_manager
+  end
+
   private
 
   def initialize_cloud_inventory_collections
-    add_cloud_collection(:vms)
+    add_cloud_collection(:vms) do |builder|
+      builder.add_default_values(:ems_id => ->(persister) { persister.cloud_manager.id })
+    end
     add_cloud_collection(:hardwares)
     add_cloud_collection(:disks)
     add_cloud_collection(:operating_systems)
     add_key_pairs
     add_cloud_collection(:miq_templates) do |builder|
       builder.add_properties(:model_class => ::ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::Template)
+      builder.add_default_values(:ems_id => ->(persister) { persister.cloud_manager.id })
     end
 
     add_advanced_settings
   end
 
   def initialize_network_inventory_collections
-    %i[cloud_networks cloud_subnets network_ports cloud_subnet_network_ports].each do |name|
-      add_network_collection(name)
+    add_network_collection(:cloud_networks) do |builder|
+      builder.add_default_values(:ems_id => ->(persister) { persister.network_manager.id })
     end
+    add_network_collection(:cloud_subnets) do |builder|
+      builder.add_default_values(:ems_id => ->(persister) { persister.network_manager.id })
+    end
+    add_network_collection(:network_ports) do |builder|
+      builder.add_default_values(:ems_id => ->(persister) { persister.network_manager.id })
+    end
+    add_network_collection(:cloud_subnet_network_ports)
   end
 
   def initialize_storage_inventory_collections
-    add_storage_collection(:cloud_volumes)
+    add_storage_collection(:cloud_volumes) do |builder|
+      builder.add_default_values(:ems_id => ->(persister) { persister.storage_manager.id })
+    end
   end
 
   def add_key_pairs(extra_properties = {})
-    add_collection(cloud, :key_pairs, extra_properties) do |b|
-      b.add_properties(:model_class => ::ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::AuthKeyPair)
+    add_collection(cloud, :key_pairs, extra_properties) do |builder|
+      builder.add_properties(:model_class => ::ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::AuthKeyPair)
+      builder.add_default_values(
+        :resource_id   => ->(persister) { persister.cloud_manager.id },
+        :resource_type => ->(persister) { persister.cloud_manager.class.base_class }
+      )
     end
   end
 
@@ -69,17 +97,5 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister < Manage
         :parent_inventory_collections => %i[vms]
       )
     end
-  end
-
-  def cloud_manager
-    manager.kind_of?(EmsCloud) ? manager : manager.parent_manager
-  end
-
-  def network_manager
-    manager.kind_of?(EmsNetwork) ? manager : manager.network_manager
-  end
-
-  def storage_manager
-    manager.kind_of?(EmsStorage) ? manager : manager.storage_manager
   end
 end

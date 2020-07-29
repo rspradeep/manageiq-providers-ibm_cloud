@@ -29,6 +29,22 @@ describe ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::Refresher do
       end
     end
 
+    it "refreshes the child network_manager" do
+      2.times do
+        full_refresh(ems.network_manager)
+        ems.reload
+        assert_table_counts
+      end
+    end
+
+    it "refreshes the child storage_manager" do
+      2.times do
+        full_refresh(ems.storage_manager)
+        ems.reload
+        assert_table_counts
+      end
+    end
+
     def assert_table_counts
       expect(Vm.count).to eq(2)
       expect(OperatingSystem.count).to eq(2)

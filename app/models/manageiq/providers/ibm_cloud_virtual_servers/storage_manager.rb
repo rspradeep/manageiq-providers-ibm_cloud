@@ -19,7 +19,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::StorageManager < ManageIQ::Pr
            :hostname,
            :default_endpoint,
            :endpoints,
-           :cloud_volumes,
+           :key_pairs,
            :to        => :parent_manager,
            :allow_nil => true
 
