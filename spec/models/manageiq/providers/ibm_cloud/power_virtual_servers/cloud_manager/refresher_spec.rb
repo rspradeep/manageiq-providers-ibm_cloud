@@ -76,7 +76,7 @@ describe ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::Refre
         :description      => "IBM Cloud Server",
         :vendor           => "ibm",
         :power_state      => "on",
-        :raw_power_state  => "on",
+        :raw_power_state  => "ACTIVE",
         :connection_state => "connected",
         :type             => "ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::Vm"
       )

@@ -29,7 +29,7 @@ class ManageIQ::Providers::IbmCloud::Inventory::Parser::PowerVirtualServers < Ma
         :name              => instance["serverName"],
         :vendor            => "ibm",
         :connection_state  => "connected",
-        :raw_power_state   => instance["status"] == "ACTIVE" ? "on" : "off",
+        :raw_power_state   => instance["status"],
         :uid_ems           => instance["pvmInstanceID"],
       )
 

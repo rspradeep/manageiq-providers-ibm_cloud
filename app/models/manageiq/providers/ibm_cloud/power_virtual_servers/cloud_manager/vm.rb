@@ -24,6 +24,11 @@ class ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::Vm < Man
   end
 
   def self.calculate_power_state(raw_power_state)
-    raw_power_state
+    case raw_power_state
+    when "ACTIVE"
+      "on"
+    else
+      "off"
+    end
   end
 end
