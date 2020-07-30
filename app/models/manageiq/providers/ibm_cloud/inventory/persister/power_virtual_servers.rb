@@ -9,6 +9,10 @@ class ManageIQ::Providers::IbmCloud::Inventory::Persister::PowerVirtualServers <
     initialize_storage_inventory_collections
   end
 
+  def self.provider_module
+    "ManageIQ::Providers::IbmCloud::PowerVirtualServers"
+  end
+
   def cloud_manager
     manager.kind_of?(EmsCloud) ? manager : manager.parent_manager
   end
@@ -25,7 +29,6 @@ class ManageIQ::Providers::IbmCloud::Inventory::Persister::PowerVirtualServers <
 
   def initialize_cloud_inventory_collections
     add_cloud_collection(:vms) do |builder|
-      builder.add_properties(:model_class => ::ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::Vm)
       builder.add_default_values(:ems_id => ->(persister) { persister.cloud_manager.id })
     end
     add_cloud_collection(:hardwares)
