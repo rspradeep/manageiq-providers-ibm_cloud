@@ -30,7 +30,12 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister < Manage
     add_cloud_collection(:hardwares)
     add_cloud_collection(:disks)
     add_cloud_collection(:operating_systems)
-    add_key_pairs
+    add_cloud_collection(:auth_key_pairs) do |builder|
+      builder.add_default_values(
+        :resource_id   => ->(persister) { persister.cloud_manager.id },
+        :resource_type => ->(persister) { persister.cloud_manager.class.base_class }
+      )
+    end
     add_cloud_collection(:miq_templates) do |builder|
       builder.add_properties(:model_class => ::ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::Template)
       builder.add_default_values(:ems_id => ->(persister) { persister.cloud_manager.id })
@@ -55,16 +60,6 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Persister < Manage
   def initialize_storage_inventory_collections
     add_storage_collection(:cloud_volumes) do |builder|
       builder.add_default_values(:ems_id => ->(persister) { persister.storage_manager.id })
-    end
-  end
-
-  def add_key_pairs(extra_properties = {})
-    add_collection(cloud, :key_pairs, extra_properties) do |builder|
-      builder.add_properties(:model_class => ::ManageIQ::Providers::IbmCloudVirtualServers::CloudManager::AuthKeyPair)
-      builder.add_default_values(
-        :resource_id   => ->(persister) { persister.cloud_manager.id },
-        :resource_type => ->(persister) { persister.cloud_manager.class.base_class }
-      )
     end
   end
 
