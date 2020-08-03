@@ -149,7 +149,7 @@ class ManageIQ::Providers::IbmCloud::Inventory::Parser::PowerVirtualServers < Ma
       mac_to_port = {}
 
       collector.ports(network['networkID']).each do |port|
-        vmi_id = port['pvmInstance']['pvmInstanceID']
+        vmi_id = port.dig('pvmInstance', 'pvmInstanceID')
 
         persister_network_port = persister.network_ports.build(
           :name        => port['portID'],
