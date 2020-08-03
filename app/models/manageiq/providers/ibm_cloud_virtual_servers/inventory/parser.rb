@@ -191,7 +191,7 @@ class ManageIQ::Providers::IbmCloudVirtualServers::Inventory::Parser < ManageIQ:
       }
 
       # save the tenant instance
-      persister.key_pairs.build(:name => tenant_key[:name])
+      persister.auth_key_pairs.build(:name => tenant_key[:name])
     end
   end
 end
