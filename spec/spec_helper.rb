@@ -6,9 +6,9 @@ end
 Dir[Rails.root.join("spec/shared/**/*.rb")].each { |f| require f }
 Dir[File.join(__dir__, "support/**/*.rb")].each { |f| require f }
 
-require "manageiq-providers-ibm_cloud_virtual_servers"
+require "manageiq-providers-ibm_cloud"
 
 VCR.configure do |config|
   config.ignore_hosts 'codeclimate.com' if ENV['CI']
-  config.cassette_library_dir = File.join(ManageIQ::Providers::IbmCloudVirtualServers::Engine.root, 'spec/vcr_cassettes')
+  config.cassette_library_dir = File.join(ManageIQ::Providers::IbmCloud::Engine.root, 'spec/vcr_cassettes')
 end
