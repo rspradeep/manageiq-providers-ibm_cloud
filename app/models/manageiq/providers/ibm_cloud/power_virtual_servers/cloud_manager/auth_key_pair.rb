@@ -23,7 +23,7 @@ class ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::AuthKeyP
 
   def raw_delete_key_pair
     power_iaas = resource.connect(:target => "PowerIaas")
-    cvs.delete_key_pair(name)
+    power_iaas.delete_key_pair(name)
   rescue => err
     _log.log_backtrace(err)
     _log.error("keypair=[#{name}], error: #{err}")
