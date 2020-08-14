@@ -19,7 +19,7 @@ module ManageIQ::Providers::IbmCloud::PowerVirtualServers::ManagerMixin
     case options[:service]
     when "PowerIaas"
       region, guid, token, crn, tenant = creds.values_at(:region, :guid, :token, :crn, :tenant)
-      IbmCloud::API::PowerIaas.new(region, guid, token, crn, tenant)
+      IBM::Cloud::SDK::PowerIaas.new(region, guid, token, crn, tenant)
     else
       raise ArgumentError, "Unknown target API set: '#{options[:service]}''"
     end
@@ -77,10 +77,10 @@ module ManageIQ::Providers::IbmCloud::PowerVirtualServers::ManagerMixin
         raise MiqException::MiqInvalidCredentialsError, _("Missing credentials")
       end
 
-      require "ibm_cloud_api"
-      iam = IbmCloud::API::IAM.new(api_key)
+      require "ibm-cloud-sdk"
+      iam = IBM::Cloud::SDK::IAM.new(api_key)
       token = iam.get_identity_token
-      power_iaas_service = IbmCloud::API::ResourceController.new(token).get_resource(pcloud_guid)
+      power_iaas_service = IBM::Cloud::SDK::ResourceController.new(token).get_resource(pcloud_guid)
 
       {:token => token, :guid => pcloud_guid, :crn => power_iaas_service.crn, :region => power_iaas_service.region_id, :tenant => power_iaas_service.account_id}
     end
