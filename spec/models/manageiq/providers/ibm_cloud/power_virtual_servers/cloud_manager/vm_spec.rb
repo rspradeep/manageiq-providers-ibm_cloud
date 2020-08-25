@@ -2,7 +2,7 @@ describe ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::Vm do
   let(:ems) do                                                                                                                                                               
     uid_ems  = "473f85b4-c4ba-4425-b495-d26c77365c91"                                                                                                                        
     auth_key = Rails.application.secrets.ibmcvs.try(:[], :api_key) || "IBMCVS_API_KEY"                                                                                       
-    FactoryBot.create(:ems_ibm_cloud_powervs, :uid_ems => uid_ems, :provider_region => "us-south").tap do |ems|                                          
+    FactoryBot.create(:ems_Ibm_Cloud_Powervs, :uid_ems => uid_ems, :provider_region => "us-south").tap do |ems|                                          
       ems.authentications << FactoryBot.create(:authentication, :auth_key => auth_key)                                                                                       
     end                                                                                                                                                                      
   end                                                                                                                                                                        
@@ -46,7 +46,7 @@ describe ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::Vm do
     end
 
     context "when not connected to a provider" do
-      let(:archived_vm) { FactoryBot.create(:vm_ibm_cloud_powervs) }
+      let(:archived_vm) { FactoryBot.create(:vm_Ibm_Cloud_Powervs) }
 
       it "returns false" do
         expect(archived_vm.supports_terminate?).to be_falsey
