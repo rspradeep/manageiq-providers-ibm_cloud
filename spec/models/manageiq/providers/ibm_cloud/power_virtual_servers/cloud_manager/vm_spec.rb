@@ -1,11 +1,12 @@
 describe ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::Vm do
-  let(:ems) do                                                                                                                                                               
-    uid_ems  = "473f85b4-c4ba-4425-b495-d26c77365c91"                                                                                                                        
-    auth_key = Rails.application.secrets.ibmcvs.try(:[], :api_key) || "IBMCVS_API_KEY"                                                                                       
-    FactoryBot.create(:ems_Ibm_Cloud_Powervs, :uid_ems => uid_ems, :provider_region => "us-south").tap do |ems|                                          
-      ems.authentications << FactoryBot.create(:authentication, :auth_key => auth_key)                                                                                       
-    end                                                                                                                                                                      
-  end                                                                                                                                                                        
+  let(:ems) do
+    uid_ems  = "473f85b4-c4ba-4425-b495-d26c77365c91"
+    auth_key = Rails.application.secrets.ibmcvs.try(:[], :api_key) || "IBMCVS_API_KEY"
+
+    FactoryBot.create(:ems_ibm_cloud_power_virtual_servers_cloud, :uid_ems => uid_ems, :provider_region => "us-south").tap do |ems|
+      ems.authentications << FactoryBot.create(:authentication, :auth_key => auth_key)
+    end
+  end
   let(:vm)  { FactoryBot.create(:vm_ibm_cloud_powervs, :ext_management_system => ems) }
 
   context "#is_available?" do
