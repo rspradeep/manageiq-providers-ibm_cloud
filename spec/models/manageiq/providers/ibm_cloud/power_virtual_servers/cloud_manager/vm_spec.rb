@@ -8,37 +8,36 @@ describe ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::Vm do
   end                                                                                                                                                                        
   let(:vm)  { FactoryBot.create(:vm_ibm_cloud_power_virtual_servers, :ext_management_system => ems) }
 
-  context "#is_available?" do
+  context "is_available?" do
     let(:power_state_on)        { "running" }
     let(:power_state_suspended) { "pending" }
 
-    context("with :start") do
+    context"with :start" do
       let(:state) { :start }
       include_examples "Vm operation is available when not powered on"
     end
 
-    context("with :stop") do
+    context"with :stop" do
       let(:state) { :stop }
       include_examples "Vm operation is available when powered on"
     end
 
-    context("with :shutdown_guest") do
+    context"with :shutdown_guest" do
       let(:state) { :shutdown_guest }
       include_examples "Vm operation is not available"
     end
 
-    context("with :standby_guest") do
+    context"with :standby_guest" do
       let(:state) { :standby_guest }
       include_examples "Vm operation is not available"
     end
 
-    context("with :reset") do
+    context"with :reset" do
       let(:state) { :reset }
       include_examples "Vm operation is not available"
     end
   end
-
-  describe "#supports_terminate?" do
+  describe "supports_terminate?" do
     context "when connected to a provider" do
       it "returns true" do
         expect(vm.supports_terminate?).to be_truthy
@@ -46,7 +45,7 @@ describe ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::Vm do
     end
 
     context "when not connected to a provider" do
-      let(:archived_vm) { FactoryBot.create(:vm_Ibm_Cloud_Powervs) }
+      let(:archived_vm) { FactoryBot.create(:vm_ibm_cloud_power_virtual_servers) }
 
       it "returns false" do
         expect(archived_vm.supports_terminate?).to be_falsey
