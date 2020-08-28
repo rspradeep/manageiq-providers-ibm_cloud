@@ -43,7 +43,6 @@ describe ManageIQ::Providers::IbmCloud::PowerVirtualServers::CloudManager::Vm do
         expect(vm.supports_terminate?).to be_truthy
       end
     end
-
     context "when not connected to a provider" do
       let(:archived_vm) { FactoryBot.create(:vm_ibm_cloud_power_virtual_servers) }
 
